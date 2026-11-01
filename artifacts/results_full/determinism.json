@@ -1,0 +1,197 @@
+{
+ "measured_at": "2026-10-31 14:00 UTC",
+ "threads": [
+  "Incidents/2022-07-20 network interruption#0",
+  "Incidents/2022-09-08 codfw appservers degradation#8",
+  "Incidents/2025-05-07 cloud-vps security groups deleted#1",
+  "Incidents/2024-06-11 WMCS Ceph#5",
+  "Incidents/2022-12-09 MediaWiki REST API#6",
+  "Incidents/2023-05-28 wikireplicas lag#3",
+  "Incidents/2025-04-30 Gerrit data corruption#3",
+  "Incidents/2022-02-01 ulsfo network#5",
+  "Incidents/2022-06-10 overload varnish haproxy#0",
+  "Incidents/2025-07-11 WMCS Ceph issues causing Toolforge and Cloud VPS failures#3"
+ ],
+ "rows": [
+  {
+   "mode": "closed",
+   "thread": "Incidents/2022-07-20 network interruption#0",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2022-09-08 codfw appservers degradation#8",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2025-05-07 cloud-vps security groups deleted#1",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2024-06-11 WMCS Ceph#5",
+   "distinct": 2,
+   "all_same": false
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2022-12-09 MediaWiki REST API#6",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2023-05-28 wikireplicas lag#3",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2025-04-30 Gerrit data corruption#3",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2022-02-01 ulsfo network#5",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2022-06-10 overload varnish haproxy#0",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "closed",
+   "thread": "Incidents/2025-07-11 WMCS Ceph issues causing Toolforge and Cloud VPS failures#3",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2022-07-20 network interruption#0",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2022-09-08 codfw appservers degradation#8",
+   "distinct": 2,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2025-05-07 cloud-vps security groups deleted#1",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2024-06-11 WMCS Ceph#5",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2022-12-09 MediaWiki REST API#6",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2023-05-28 wikireplicas lag#3",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2025-04-30 Gerrit data corruption#3",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2022-02-01 ulsfo network#5",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2022-06-10 overload varnish haproxy#0",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "free",
+   "thread": "Incidents/2025-07-11 WMCS Ceph issues causing Toolforge and Cloud VPS failures#3",
+   "distinct": 3,
+   "all_same": false
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2022-07-20 network interruption#0",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2022-09-08 codfw appservers degradation#8",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2025-05-07 cloud-vps security groups deleted#1",
+   "distinct": 2,
+   "all_same": false
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2024-06-11 WMCS Ceph#5",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2022-12-09 MediaWiki REST API#6",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2023-05-28 wikireplicas lag#3",
+   "distinct": 2,
+   "all_same": false
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2025-04-30 Gerrit data corruption#3",
+   "distinct": 2,
+   "all_same": false
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2022-02-01 ulsfo network#5",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2022-06-10 overload varnish haproxy#0",
+   "distinct": 1,
+   "all_same": true
+  },
+  {
+   "mode": "claude",
+   "thread": "Incidents/2025-07-11 WMCS Ceph issues causing Toolforge and Cloud VPS failures#3",
+   "distinct": 1,
+   "all_same": true
+  }
+ ]
+}

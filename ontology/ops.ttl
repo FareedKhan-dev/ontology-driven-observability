@@ -1,0 +1,127 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ops: <https://kg.example.org/ops#> .        @prefix slack: <https://kg.example.org/slack#> .
+@prefix alert: <https://kg.example.org/alert#> .    @prefix metric: <https://kg.example.org/metric#> .
+@prefix log: <https://kg.example.org/log#> .        @prefix tl: <https://kg.example.org/timeline#> .
+@prefix incident: <https://kg.example.org/incident#> . @prefix rca: <https://kg.example.org/rca#> .
+@prefix exp: <https://kg.example.org/experiment#> . @prefix e2e: <https://kg.example.org/e2e#> .
+@prefix corr: <https://kg.example.org/correlation#> . @prefix harvest: <https://kg.example.org/harvest#> .
+@prefix code: <https://kg.example.org/code#> .      @prefix users: <https://kg.example.org/users#> .
+
+# --- OPS: who and what exists -----------------------------------------------------------
+ops:Organisation a owl:Class ; rdfs:comment "a tenant: one company or one benchmark system" .
+ops:Component a owl:Class ; rdfs:comment "anything that can break; abstract, never asserted directly" .
+ops:Application rdfs:subClassOf ops:Component ; rdfs:comment "deployable software, gated by the catalogue" .
+ops:Cluster rdfs:subClassOf ops:Component ; rdfs:comment "a pool of hosts or pods serving one purpose" .
+ops:Host rdfs:subClassOf ops:Component ; rdfs:comment "a machine or virtual machine" .
+ops:Pod rdfs:subClassOf ops:Component ; rdfs:comment "one running container instance" .
+ops:Team a owl:Class .  ops:Person a owl:Class .  ops:Datacenter a owl:Class .  ops:Role a owl:Class .
+ops:tenant a owl:ObjectProperty ; rdfs:range ops:Organisation .
+ops:catalogId a owl:DatatypeProperty ; rdfs:range xsd:string .
+ops:name a owl:DatatypeProperty ; rdfs:range xsd:string .
+ops:alias a owl:DatatypeProperty ; rdfs:range xsd:string .
+ops:ownedBy a owl:ObjectProperty ; rdfs:range ops:Team .
+ops:memberOf a owl:ObjectProperty ; rdfs:domain ops:Host ; rdfs:range ops:Cluster .
+ops:hasRole a owl:ObjectProperty ; rdfs:domain ops:Host ; rdfs:range ops:Role .
+ops:locatedIn a owl:ObjectProperty ; rdfs:range ops:Datacenter .
+ops:runsOn a owl:ObjectProperty ; rdfs:domain ops:Application ; rdfs:range ops:Component .
+ops:dependsOn a owl:ObjectProperty ; rdfs:domain ops:Component ; rdfs:range ops:Component .
+ops:Incident rdfs:subClassOf corr:Signal ; rdfs:comment "an episode of user-visible harm, known to every tool" .
+ops:affects a owl:ObjectProperty ; rdfs:domain ops:Incident ; rdfs:range ops:Component .
+
+# --- CORRELATION: one superclass for every signal, and the chains built from them -----------
+corr:Signal a owl:Class ; rdfs:comment "something that happened to a component at a time" .
+corr:on a owl:ObjectProperty ; rdfs:domain corr:Signal ; rdfs:range ops:Component .
+corr:at a owl:DatatypeProperty ; rdfs:domain corr:Signal ; rdfs:range xsd:dateTime .
+corr:detectedAt a owl:DatatypeProperty ; rdfs:domain corr:Signal ; rdfs:range xsd:dateTime .
+corr:severity a owl:DatatypeProperty ; rdfs:domain corr:Signal ; rdfs:range xsd:decimal .
+corr:signalType a owl:DatatypeProperty ; rdfs:domain corr:Signal ; rdfs:range xsd:string .
+corr:inHour a owl:ObjectProperty ; rdfs:domain corr:Signal ; rdfs:range corr:Hour .
+corr:Hour a owl:Class ; rdfs:comment "an hour bucket, so time windows become index lookups" .
+corr:Chain a owl:Class .  corr:Hop a owl:Class .
+corr:rootCause a owl:ObjectProperty ; rdfs:domain corr:Chain ; rdfs:range corr:Signal .
+corr:leadsTo a owl:ObjectProperty ; rdfs:domain corr:Chain ; rdfs:range corr:Signal .
+corr:rootCauseType a owl:DatatypeProperty ; rdfs:domain corr:Chain ; rdfs:range xsd:string .
+corr:affectsComponent a owl:ObjectProperty ; rdfs:domain corr:Chain ; rdfs:range ops:Component .
+corr:confidence a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+corr:hasHop a owl:ObjectProperty ; rdfs:domain corr:Chain ; rdfs:range corr:Hop .
+corr:hopFrom a owl:ObjectProperty ; rdfs:domain corr:Hop ; rdfs:range corr:Signal .
+corr:hopTo a owl:ObjectProperty ; rdfs:domain corr:Hop ; rdfs:range corr:Signal .
+corr:gapMinutes a owl:DatatypeProperty ; rdfs:domain corr:Hop ; rdfs:range xsd:decimal .
+corr:hopScore a owl:DatatypeProperty ; rdfs:domain corr:Hop ; rdfs:range xsd:decimal .
+corr:evidence a owl:ObjectProperty .
+
+# --- the signal kinds, each owned by its own namespace -------------------------------------
+alert:Firing rdfs:subClassOf corr:Signal .           alert:Rule a owl:Class .
+alert:ofRule a owl:ObjectProperty ; rdfs:domain alert:Firing ; rdfs:range alert:Rule .
+alert:resolvedAt a owl:DatatypeProperty ; rdfs:domain alert:Firing ; rdfs:range xsd:dateTime .
+alert:source a owl:DatatypeProperty ; rdfs:domain alert:Firing ; rdfs:range xsd:string .
+alert:pages a owl:DatatypeProperty ; rdfs:domain alert:Firing ; rdfs:range xsd:boolean .
+metric:Anomaly rdfs:subClassOf corr:Signal .         metric:Series a owl:Class .
+metric:kpi a owl:DatatypeProperty ; rdfs:domain metric:Anomaly ; rdfs:range xsd:string .
+metric:magnitude a owl:DatatypeProperty ; rdfs:domain metric:Anomaly ; rdfs:range xsd:decimal .
+log:ErrorBurst rdfs:subClassOf corr:Signal .         log:NewPattern rdfs:subClassOf corr:Signal .
+log:Pattern a owl:Class .
+log:template a owl:DatatypeProperty ; rdfs:domain log:Pattern ; rdfs:range xsd:string .
+log:ofPattern a owl:ObjectProperty ; rdfs:range log:Pattern .
+e2e:SlowSpans rdfs:subClassOf corr:Signal .          e2e:FailedSpans rdfs:subClassOf corr:Signal .
+e2e:Bottleneck rdfs:subClassOf corr:Signal .
+e2e:operation a owl:DatatypeProperty ; rdfs:range xsd:string .
+e2e:p99ms a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+tl:Change rdfs:subClassOf corr:Signal .
+tl:Deployment rdfs:subClassOf tl:Change .            tl:ConfigChange rdfs:subClassOf tl:Change .
+tl:CapacityChange rdfs:subClassOf tl:Change ; rdfs:comment "depool and repool: Netflix's AUTOSCALE, done by hand" .
+tl:Maintenance rdfs:subClassOf tl:Change ; rdfs:comment "ours: reboots and reimages, which do cause alerts" .
+tl:actor a owl:ObjectProperty ; rdfs:range ops:Person .
+tl:tool a owl:DatatypeProperty ; rdfs:domain tl:Change ; rdfs:range xsd:string .
+tl:message a owl:DatatypeProperty ; rdfs:domain tl:Change ; rdfs:range xsd:string .
+tl:includes a owl:ObjectProperty ; rdfs:domain tl:Change ; rdfs:range code:Change .
+code:Change rdfs:subClassOf corr:Signal ; rdfs:comment "ours: a merged code change (Figure 7's COMMIT)" .
+code:number a owl:DatatypeProperty ; rdfs:domain code:Change ; rdfs:range xsd:integer .
+code:project a owl:DatatypeProperty ; rdfs:domain code:Change ; rdfs:range xsd:string .
+exp:Experiment rdfs:subClassOf corr:Signal .         exp:Allocation a owl:Class .
+users:TrafficShift rdfs:subClassOf corr:Signal ; rdfs:comment "ours: a surge or dip in human pageviews" .
+users:project a owl:DatatypeProperty ; rdfs:domain users:TrafficShift ; rdfs:range xsd:string .
+users:ratio a owl:DatatypeProperty ; rdfs:domain users:TrafficShift ; rdfs:range xsd:decimal .
+
+# --- SLACK, INCIDENT, RCA: the human side ---------------------------------------------------
+slack:Channel a owl:Class .  slack:Message a owl:Class .  slack:Conversation a owl:Class .
+slack:inChannel a owl:ObjectProperty ; rdfs:domain slack:Message ; rdfs:range slack:Channel .
+slack:partOf a owl:ObjectProperty ; rdfs:domain slack:Message ; rdfs:range slack:Conversation .
+slack:author a owl:ObjectProperty ; rdfs:domain slack:Message ; rdfs:range ops:Person .
+slack:postedAt a owl:DatatypeProperty ; rdfs:domain slack:Message ; rdfs:range xsd:dateTime .
+slack:text a owl:DatatypeProperty ; rdfs:domain slack:Message ; rdfs:range xsd:string .
+slack:mentions a owl:ObjectProperty ; rdfs:domain slack:Message ; rdfs:range ops:Component .
+slack:category a owl:DatatypeProperty ; rdfs:domain slack:Message ; rdfs:range xsd:string .
+slack:sentiment a owl:DatatypeProperty ; rdfs:domain slack:Message ; rdfs:range xsd:string .
+slack:isIncidentRelated a owl:DatatypeProperty ; rdfs:domain slack:Message ; rdfs:range xsd:boolean .
+slack:about a owl:ObjectProperty ; rdfs:domain slack:Conversation ; rdfs:range ops:Incident .
+incident:Report a owl:Class .  incident:TimelineEntry a owl:Class .
+incident:reportedIn a owl:ObjectProperty ; rdfs:domain ops:Incident ; rdfs:range incident:Report .
+incident:startedAt a owl:DatatypeProperty ; rdfs:domain ops:Incident ; rdfs:range xsd:dateTime .
+incident:resolvedAt a owl:DatatypeProperty ; rdfs:domain ops:Incident ; rdfs:range xsd:dateTime .
+incident:impact a owl:DatatypeProperty ; rdfs:domain ops:Incident ; rdfs:range xsd:string .
+incident:coordinator a owl:ObjectProperty ; rdfs:range ops:Person .
+incident:hasEntry a owl:ObjectProperty ; rdfs:range incident:TimelineEntry .
+incident:entryAt a owl:DatatypeProperty ; rdfs:domain incident:TimelineEntry ; rdfs:range xsd:dateTime .
+incident:entryText a owl:DatatypeProperty ; rdfs:domain incident:TimelineEntry ; rdfs:range xsd:string .
+incident:detectedBy a owl:DatatypeProperty ; rdfs:domain ops:Incident ; rdfs:range xsd:string .
+rca:Hypothesis a owl:Class .  rca:Remediation a owl:Class .
+rca:forIncident a owl:ObjectProperty ; rdfs:domain rca:Hypothesis ; rdfs:range ops:Incident .
+rca:cause a owl:ObjectProperty ; rdfs:domain rca:Hypothesis .
+rca:causeKind a owl:DatatypeProperty ; rdfs:domain rca:Hypothesis ; rdfs:range xsd:string .
+rca:rank a owl:DatatypeProperty ; rdfs:domain rca:Hypothesis ; rdfs:range xsd:integer .
+rca:status a owl:DatatypeProperty ; rdfs:domain rca:Hypothesis ; rdfs:range xsd:string .
+rca:proposedBy a owl:DatatypeProperty ; rdfs:domain rca:Hypothesis ; rdfs:range xsd:string .
+
+# --- HARVEST: where every fact came from (W3C PROV-O) --------------------------------------
+harvest:Run rdfs:subClassOf prov:Activity .
+harvest:Coverage a owl:Class ; rdfs:comment "what one run fetched, or failed to fetch, for one source and window" .
+harvest:enricher a owl:DatatypeProperty ; rdfs:domain harvest:Run ; rdfs:range xsd:string .
+harvest:source a owl:DatatypeProperty ; rdfs:domain harvest:Coverage ; rdfs:range xsd:string .
+harvest:windowStart a owl:DatatypeProperty ; rdfs:domain harvest:Coverage ; rdfs:range xsd:dateTime .
+harvest:windowEnd a owl:DatatypeProperty ; rdfs:domain harvest:Coverage ; rdfs:range xsd:dateTime .
+harvest:status a owl:DatatypeProperty ; rdfs:domain harvest:Coverage ; rdfs:range xsd:string .
+harvest:triplesAdded a owl:DatatypeProperty ; rdfs:domain harvest:Run ; rdfs:range xsd:integer .

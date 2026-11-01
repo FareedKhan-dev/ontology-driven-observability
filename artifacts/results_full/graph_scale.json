@@ -1,0 +1,257 @@
+{
+ "write_s": 49.4,
+ "base_triples": 687906,
+ "by_source": {
+  "changes": 1537086,
+  "alert episodes": 2785642,
+  "chat lines": 6921512,
+  "lab signals": 5169013,
+  "traffic shifts": 118662
+ },
+ "steps": [
+  {
+   "triples_written": 3999995,
+   "load_s": 6.1,
+   "optimize_s": 1.5,
+   "upto": "2022-03-20 01:59:00+00:00",
+   "queries": {
+    "everything on one host, six hours": {
+     "p50_ms": 0.8259500027634203,
+     "p95_ms": 2.479044986830559,
+     "rows": 6.65
+    },
+    "alerts in one hour, by host": {
+     "p50_ms": 0.17094999202527106,
+     "p95_ms": 0.35508500877767807,
+     "rows": 1.15
+    },
+    "changes in the hour before an alert": {
+     "p50_ms": 0.59635000070557,
+     "p95_ms": 2.1002999914344405,
+     "rows": 7.15
+    },
+    "chat in one hour, no bucket (a range filter)": {
+     "p50_ms": 70.9705000044778,
+     "p95_ms": 77.13347998214886,
+     "rows": 1.0
+    }
+   }
+  },
+  {
+   "triples_written": 5999999,
+   "load_s": 8.6,
+   "optimize_s": 3.0,
+   "upto": "2022-03-21 03:33:00+00:00",
+   "queries": {
+    "everything on one host, six hours": {
+     "p50_ms": 1.3539999927161261,
+     "p95_ms": 3.5443400076474076,
+     "rows": 6.65
+    },
+    "alerts in one hour, by host": {
+     "p50_ms": 0.18304998229723424,
+     "p95_ms": 0.38127499137772247,
+     "rows": 1.15
+    },
+    "changes in the hour before an alert": {
+     "p50_ms": 0.7040999917080626,
+     "p95_ms": 2.4420550136710526,
+     "rows": 7.15
+    },
+    "chat in one hour, no bucket (a range filter)": {
+     "p50_ms": 78.0283999920357,
+     "p95_ms": 89.0364600054454,
+     "rows": 1.0
+    }
+   }
+  },
+  {
+   "triples_written": 7999998,
+   "load_s": 11.1,
+   "optimize_s": 5.0,
+   "upto": "2022-08-24 20:18:13+00:00",
+   "queries": {
+    "everything on one host, six hours": {
+     "p50_ms": 0.966899999184534,
+     "p95_ms": 2.872905011463445,
+     "rows": 6.65
+    },
+    "alerts in one hour, by host": {
+     "p50_ms": 0.18700001237448305,
+     "p95_ms": 0.41208000911865383,
+     "rows": 1.15
+    },
+    "changes in the hour before an alert": {
+     "p50_ms": 0.6864499882794917,
+     "p95_ms": 2.3589150237967265,
+     "rows": 7.15
+    },
+    "chat in one hour, no bucket (a range filter)": {
+     "p50_ms": 118.35960001917556,
+     "p95_ms": 128.81309998920187,
+     "rows": 1.0
+    }
+   }
+  },
+  {
+   "triples_written": 11999997,
+   "load_s": 15.7,
+   "optimize_s": 8.2,
+   "upto": "2024-12-12 16:06:00+00:00",
+   "queries": {
+    "everything on one host, six hours": {
+     "p50_ms": 0.9969000093406066,
+     "p95_ms": 3.9663549992837974,
+     "rows": 6.65
+    },
+    "alerts in one hour, by host": {
+     "p50_ms": 0.20929999300278723,
+     "p95_ms": 0.4300650005461648,
+     "rows": 1.15
+    },
+    "changes in the hour before an alert": {
+     "p50_ms": 0.75045000994578,
+     "p95_ms": 2.4738800100749376,
+     "rows": 7.15
+    },
+    "chat in one hour, no bucket (a range filter)": {
+     "p50_ms": 401.49989997735247,
+     "p95_ms": 407.14463999611326,
+     "rows": 1.0
+    }
+   }
+  },
+  {
+   "triples_written": 17219821,
+   "load_s": 22.2,
+   "optimize_s": 20.6,
+   "upto": "2026-10-31 06:59:57.765000192+00:00",
+   "queries": {
+    "everything on one host, six hours": {
+     "p50_ms": 1.0078500054078177,
+     "p95_ms": 3.405475008185025,
+     "rows": 6.65
+    },
+    "alerts in one hour, by host": {
+     "p50_ms": 0.22130001161713153,
+     "p95_ms": 0.4065150045789779,
+     "rows": 1.15
+    },
+    "changes in the hour before an alert": {
+     "p50_ms": 0.7080000068526715,
+     "p95_ms": 2.6582500184304085,
+     "rows": 7.15
+    },
+    "chat in one hour, no bucket (a range filter)": {
+     "p50_ms": 598.749199998565,
+     "p95_ms": 608.5630600107834,
+     "rows": 1.0
+    }
+   }
+  }
+ ],
+ "fixed_anchors": {
+  "episodes": 1765,
+  "before": "2022-03-19 10:08:19+00:00"
+ },
+ "recent": {
+  "everything on one host, six hours": {
+   "p50_ms": 4.848900003707968,
+   "p95_ms": 10.486164990288673,
+   "rows": 2.6
+  },
+  "alerts in one hour, by host": {
+   "p50_ms": 1.1462499969638884,
+   "p95_ms": 3.4831349868909465,
+   "rows": 26.35
+  },
+  "changes in the hour before an alert": {
+   "p50_ms": 2.4184999929275364,
+   "p95_ms": 4.515615016862285,
+   "rows": 9.65
+  },
+  "chat in one hour, no bucket (a range filter)": {
+   "p50_ms": 609.5121999969706,
+   "p95_ms": 699.7958199994173,
+   "rows": 1.0
+  }
+ },
+ "stored": 16393203,
+ "disk_gb": 1.7,
+ "shacl": {
+  "seconds": 161.3,
+  "violations": {
+   "ops:catalogId MinCount": 0,
+   "ops:catalogId MaxCount": 0,
+   "ops:catalogId Datatype": 0,
+   "ops:name MinCount": 0,
+   "ops:name Datatype": 0,
+   "ops:memberOf MaxCount": 0,
+   "ops:memberOf Class": 0,
+   "corr:at MinCount": 0,
+   "corr:at MaxCount": 0,
+   "corr:at Datatype": 0,
+   "corr:on Class": 0,
+   "corr:severity Datatype": 0,
+   "corr:severity MinInclusive": 0,
+   "corr:severity MaxInclusive": 0,
+   "ops:affects Class": 0,
+   "corr:confidence MinCount": 0,
+   "corr:confidence Datatype": 0,
+   "corr:confidence MinInclusive": 0,
+   "corr:confidence MaxInclusive": 0,
+   "corr:rootCause MinCount": 0,
+   "corr:rootCause Class": 0,
+   "corr:leadsTo MinCount": 0,
+   "corr:leadsTo Class": 0,
+   "slack:postedAt MinCount": 0,
+   "slack:postedAt Datatype": 0,
+   "slack:category MaxCount": 0,
+   "slack:category In": 0,
+   "slack:sentiment MaxCount": 0,
+   "slack:sentiment In": 0,
+   "slack:mentions Class": 0,
+   "harvest:status MinCount": 0,
+   "harvest:status In": 0,
+   "harvest:windowStart MinCount": 0,
+   "harvest:windowStart Datatype": 0
+  },
+  "rule_seconds": {
+   "ops:catalogId MinCount": 0.0,
+   "ops:catalogId MaxCount": 0.0,
+   "ops:catalogId Datatype": 0.01,
+   "ops:name MinCount": 0.09,
+   "ops:name Datatype": 0.08,
+   "ops:memberOf MaxCount": 0.03,
+   "ops:memberOf Class": 0.05,
+   "corr:at MinCount": 14.94,
+   "corr:at MaxCount": 12.35,
+   "corr:at Datatype": 11.89,
+   "corr:on Class": 35.7,
+   "corr:severity Datatype": 9.09,
+   "corr:severity MinInclusive": 9.44,
+   "corr:severity MaxInclusive": 9.22,
+   "ops:affects Class": 0.01,
+   "corr:confidence MinCount": 0.0,
+   "corr:confidence Datatype": 0.0,
+   "corr:confidence MinInclusive": 0.0,
+   "corr:confidence MaxInclusive": 0.0,
+   "corr:rootCause MinCount": 0.0,
+   "corr:rootCause Class": 0.0,
+   "corr:leadsTo MinCount": 0.0,
+   "corr:leadsTo Class": 0.0,
+   "slack:postedAt MinCount": 11.49,
+   "slack:postedAt Datatype": 10.07,
+   "slack:category MaxCount": 6.78,
+   "slack:category In": 6.94,
+   "slack:sentiment MaxCount": 7.1,
+   "slack:sentiment In": 7.11,
+   "slack:mentions Class": 7.08,
+   "harvest:status MinCount": 0.0,
+   "harvest:status In": 0.0,
+   "harvest:windowStart MinCount": 0.0,
+   "harvest:windowStart Datatype": 0.0
+  }
+ },
+ "power": "mains"
+}

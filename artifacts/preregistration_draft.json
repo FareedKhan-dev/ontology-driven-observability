@@ -1,0 +1,144 @@
+{
+ "written": "2026-11-01",
+ "claims": [
+  [
+   "H1",
+   "One query over the ontology replaces lookups across three tools",
+   "The Ontology",
+   "E1"
+  ],
+  [
+   "H2",
+   "Constraining an LLM with a type system yields a deterministic graph",
+   "Creating determinism",
+   "E2"
+  ],
+  [
+   "H3",
+   "Validating every application against the catalogue keeps junk out of the graph",
+   "Two decisions",
+   "E3"
+  ],
+  [
+   "H4",
+   "Capping dependency edges stops popular services from dominating",
+   "Two decisions",
+   "E3"
+  ],
+  [
+   "H5",
+   "Ordered, sequential enrichment buys accuracy worth its cost in speed",
+   "Enrichers",
+   "E4"
+  ],
+  [
+   "H6",
+   "Known causal pairs plus timing and severity recover causal chains",
+   "Correlation Engine, Fig 7",
+   "E5"
+  ],
+  [
+   "H7",
+   "Each turn of the flywheel leaves the system better for the next",
+   "Knowledge flywheel, Figs 8-9",
+   "E6"
+  ],
+  [
+   "H8",
+   "The most valuable edges come from human discussion",
+   "If you want to build one",
+   "E7"
+  ],
+  [
+   "H9",
+   "Without the right context, agents hallucinate",
+   "The disagreement underneath",
+   "E7"
+  ],
+  [
+   "H10",
+   "Specialists read each other's findings through the ontology alone",
+   "Putting the graph to work",
+   "E7"
+  ],
+  [
+   "H11",
+   "The graph absorbs the hour or two spent assembling context",
+   "Putting the graph to work, Fig 3",
+   "E1"
+  ],
+  [
+   "H12",
+   "Best-effort enrichment degrades the graph but never blocks it",
+   "Enrichers, principles",
+   "E4"
+  ]
+ ],
+ "experiments": {
+  "E1": {
+   "name": "joins and context assembly",
+   "metric": "tool calls and seconds to answer; candidate narrowing",
+   "worlds": [
+    "wikimedia"
+   ]
+  },
+  "E2": {
+   "name": "typed contracts and reproducibility",
+   "metric": "rerun Jaccard beside accuracy on gold threads",
+   "worlds": [
+    "wikimedia"
+   ]
+  },
+  "E3": {
+   "name": "identity, catalogue gate, edge caps",
+   "metric": "junk entities, join rate, downstream accuracy",
+   "worlds": [
+    "wikimedia",
+    "openrca"
+   ]
+  },
+  "E4": {
+   "name": "ordering and graceful degradation",
+   "metric": "triples lost when shuffled; false 'nothing shipped'",
+   "worlds": [
+    "wikimedia"
+   ]
+  },
+  "E5": {
+   "name": "correlation",
+   "metric": "root cause in chain, placebo rate, reliability",
+   "worlds": [
+    "wikimedia",
+    "openrca",
+    "rcaeval"
+   ]
+  },
+  "E6": {
+   "name": "flywheel",
+   "metric": "score with learning on minus learning off, per cycle",
+   "worlds": [
+    "openrca",
+    "wikimedia"
+   ]
+  },
+  "E7": {
+   "name": "agents and context",
+   "metric": "accuracy, hallucination, latency, cost per investigation",
+   "worlds": [
+    "wikimedia",
+    "openrca",
+    "rcaeval"
+   ]
+  }
+ },
+ "targets": {
+  "openrca_cloudbed2_strict_pct_min": 24.36,
+  "rcaeval_re2tt_ac3_min": 0.82,
+  "wikimedia_trigger_hit3_min": 0.6,
+  "latency_p50_max_s": 15.0,
+  "latency_p95_max_s": 45.0,
+  "unverifiable_citations_max": 0,
+  "cubes_per_investigation_max": 2.5
+ },
+ "status": "draft, frozen after the pilot in section 35"
+}

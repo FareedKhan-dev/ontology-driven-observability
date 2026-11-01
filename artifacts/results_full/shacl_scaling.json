@@ -1,0 +1,53 @@
+{
+ "power": "mains",
+ "runs": [
+  {
+   "days": 1,
+   "triples": 248,
+   "pySHACL": 0.018,
+   "pySHACL_conforms": true,
+   "compiled": 0.009,
+   "compiled_conforms": true
+  },
+  {
+   "days": 4,
+   "triples": 2541,
+   "pySHACL": 0.11,
+   "pySHACL_conforms": true,
+   "compiled": 0.021,
+   "compiled_conforms": true
+  },
+  {
+   "days": 16,
+   "triples": 12002,
+   "pySHACL": 0.521,
+   "pySHACL_conforms": true,
+   "compiled": 0.143,
+   "compiled_conforms": true
+  },
+  {
+   "days": 64,
+   "triples": 30295,
+   "pySHACL": 1.681,
+   "pySHACL_conforms": true,
+   "compiled": 0.357,
+   "compiled_conforms": true
+  },
+  {
+   "days": 256,
+   "triples": 118988,
+   "pySHACL": 5.107,
+   "pySHACL_conforms": true,
+   "compiled": 1.246,
+   "compiled_conforms": true
+  },
+  {
+   "days": 1024,
+   "triples": 444603,
+   "pySHACL": 20.953,
+   "pySHACL_conforms": true,
+   "compiled": 5.672,
+   "compiled_conforms": true
+  }
+ ]
+}

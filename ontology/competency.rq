@@ -1,0 +1,22 @@
+# CQ1 incidents on a team's components in one datacenter
+SELECT DISTINCT ?incident WHERE {
+  ?incident a ops:Incident ; ops:affects ?c .
+  ?c ops:ownedBy ?team ; ops:locatedIn ?dc .
+  ?team ops:name "Data Persistence" . ?dc ops:name "eqiad" . }
+
+# CQ2 what changed on a component in the hour before an incident
+SELECT DISTINCT ?change ?tool WHERE {
+  ?incident a ops:Incident ; corr:at ?t0 ; ops:affects ?c .
+  ?change a/rdfs:subClassOf* tl:Change ; corr:on ?c ; corr:at ?t ; tl:tool ?tool .
+  FILTER(?t <= ?t0 && ?t > ?t0 - "PT1H"^^xsd:dayTimeDuration) }
+
+# CQ3 alerts anywhere on a component's dependency path
+SELECT DISTINCT ?firing WHERE {
+  ?incident a ops:Incident ; ops:affects ?c .
+  ?c ops:dependsOn+ ?dep .
+  ?firing a alert:Firing ; corr:on ?dep . }
+
+# CQ4 components with repeated deploy-caused incidents (figure 9, counted per incident)
+SELECT ?c (COUNT(DISTINCT ?incident) AS ?n) WHERE {
+  ?chain corr:rootCauseType "DEPLOYMENT" ; corr:affectsComponent ?c ; corr:leadsTo ?incident ; corr:confidence ?v .
+  FILTER(?v > 0.7) } GROUP BY ?c HAVING (COUNT(DISTINCT ?incident) > 1)

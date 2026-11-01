@@ -1,0 +1,16 @@
+* text=auto
+
+*.py      text eol=lf
+*.md      text eol=lf
+*.ttl     text eol=lf
+*.rq      text eol=lf
+*.toml    text eol=lf
+*.json    text eol=lf
+*.jsonl   text eol=lf
+*.nt      text eol=lf
+*.ipynb   text eol=lf
+
+*.png     binary
+*.parquet binary
+*.sqlite  binary
+uv.lock   text eol=lf linguist-generated

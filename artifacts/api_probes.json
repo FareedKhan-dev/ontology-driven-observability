@@ -1,0 +1,72 @@
+{
+ "when": "2026-10-31 07:10 UTC",
+ "qwen": {
+  "flash": {
+   "model": "Qwen-Ambassador/Qwen3.8-Flash-Next",
+   "json_ok": 2,
+   "latency_s": 2.08
+  },
+  "mid": {
+   "model": "Qwen-Ambassador/Qwen3.8-27B",
+   "json_ok": 2,
+   "latency_s": 2.12
+  },
+  "max": {
+   "model": "Qwen-Ambassador/Qwen3.8-Max",
+   "json_ok": 2,
+   "latency_s": 1.09
+  },
+  "omni": {
+   "model": "Qwen-Ambassador/Qwen3.8-Omni-Flash",
+   "json_ok": 2,
+   "latency_s": 1.07
+  },
+  "max37": {
+   "model": "Qwen-Ambassador/Qwen3.7-Max",
+   "json_ok": 2,
+   "latency_s": 1.54
+  },
+  "plus37": {
+   "model": "Qwen-Ambassador/Qwen3.7-Plus",
+   "json_ok": 2,
+   "latency_s": 1.65
+  }
+ },
+ "tool_calling": {
+  "ok": true,
+  "tool_calls": [
+   {
+    "function": {
+     "arguments": "{\"host\": \"db1127\"}",
+     "name": "lookup_host"
+    },
+    "id": "call_cbafaf0891be4b61b13628b3",
+    "index": 0,
+    "type": "function"
+   }
+  ],
+  "text": ""
+ },
+ "burst8": {
+  "ok": 8,
+  "retried": 1,
+  "wall_s": 6.28
+ },
+ "claude": {
+  "ok": true,
+  "data": {
+   "category": "incident",
+   "services": [
+    "db1127",
+    "s7"
+   ]
+  },
+  "usage": {
+   "input_tokens": 318,
+   "output_tokens": 22
+  },
+  "cost_usd": 0.00171,
+  "latency_s": 2.55,
+  "served_by": "claude-opus-5-5"
+ }
+}

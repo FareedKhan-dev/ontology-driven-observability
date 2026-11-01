@@ -1,0 +1,35 @@
+{
+ "power": "mains",
+ "runs": [
+  {
+   "files": 1,
+   "rows": 5430959,
+   "seconds": 0.129
+  },
+  {
+   "files": 2,
+   "rows": 12764323,
+   "seconds": 0.198
+  },
+  {
+   "files": 4,
+   "rows": 30636800,
+   "seconds": 0.425
+  },
+  {
+   "files": 8,
+   "rows": 67508087,
+   "seconds": 1.204
+  },
+  {
+   "files": 16,
+   "rows": 146174309,
+   "seconds": 2.048
+  },
+  {
+   "files": 29,
+   "rows": 396556997,
+   "seconds": 5.184
+  }
+ ]
+}

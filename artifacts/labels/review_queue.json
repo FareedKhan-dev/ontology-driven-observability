@@ -1,0 +1,1139 @@
+[
+ {
+  "incident": "Incidents/2021-07-16 asw-a2-codfw network",
+  "report_excerpt": "asw-a2-codfw, the switch handling the network traffic of rack A2 on codfw became unresponsive rendering 14 hosts unreachable. Besides losing the 14 hosts hosted on rack A2, two additional load balancers lost access to codfw's row A. Services with hosts in the impacted row (such as Swift and various mw-api servers) remained available for clients due to automatic failover and load balancing to remaining hosts. While mw-api remained available for end-users and external clients, the impacted Restbase load-balancer remained pooled causing Restbase to continue to try (and fail) to reach mw-api hosts. Thus, mobileapps API and cxserver API (which rely on Restbase) returned errors to clients for some time.    \n\nSeveral other services were switched over from Codfw to Eqiad: Maps Tile Service and Wikidata Query Service.   \n\n'''Impact''': For about 1 hour the Restbase, mobileapps, and cxserver services were serving errors. Reduced capacity of high-traffic1 load balancers and MediaWiki servers in Codfw.\n ",
+  "candidates": [
+   "host:ms-be2040",
+   "host:ms-be2051",
+   "host:ms-fe2005",
+   "host:thanos-fe2001",
+   "service:cxserver",
+   "service:mobileapps",
+   "service:restbase",
+   "service:swift",
+   "service:upload"
+  ],
+  "A": {
+   "trigger": "hardware failure",
+   "root_cause_components": [
+    "host:ms-be2040",
+    "host:ms-be2051",
+    "host:ms-fe2005",
+    "host:thanos-fe2001",
+    "service:cxserver",
+    "service:mobileapps",
+    "service:restbase"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Unresponsive switch asw-a2-codfw caused host unreachable errors and service failures in Restbase, mobileapps, and cxserver due to load balancer pooling issues."
+  },
+  "B": {
+   "trigger": "hardware failure",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Switch asw-a2-codfw became unresponsive, taking down rack A2 hosts; restrictive depool thresholds caused Restbase, mobileapps and cxserver errors for about an hour."
+  }
+ },
+ {
+  "incident": "Incidents/2021-07-26 ruwikinews DynamicPageList",
+  "report_excerpt": "[[File:Errors during 2021-07-26 DPL outage.png|thumb|Spikes in 503 errors returned to users]]\n[[File:Overall traffic during 2021-07-26 DPL outage.png|thumb|Corresponding graphs of traffic during the outage, showing approximately 15% of requests receiving errors.]]\nFollowing a large bot import to the Russian Wikinews, expanding the size of that project to 13 million pages, slow queries originating from ruwikinews's usage of the [[mw:Extension:DynamicPageList (Wikimedia)|DynamicPageList extension]]  (also known as \"[[gitiles:mediawiki/extensions/intersection|intersection]]\") overloaded the s3 cluster of databases, causing php-fpm processes to hang/stall, eventually taking down all wikis with it. The outage was resolved by disabling the DynamicPageList extension on ruwikinews and aggressively killing queries on s3 replicas. Normally, DPL's database queries roughly scale to the size of the smallest category being intersected. This would be bad enough, as ruwikinews has categories that are orders of magnitude higher than other wikis with this extension. However, in this case MariaDB chose a query plan that involved scanning the entire categorylinks table. The query in question seen during the outage took more than 3 minutes to finish on an idle replica.\n\nThe DPL query was using a sort by page_id, descending (instead of the more common sort by c1.cl_timestamp that is DPL's default sort method). According to the [[phab:P16896|EXPLAIN]], MariaDB decided to optimize this by using the ",
+  "candidates": [
+   "none"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "none"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "A large bot import to Russian Wikinews triggered a surge of slow DynamicPageList queries that overloaded the s3 database cluster and exhausted PHP-FPM workers."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Creation of a ruwikinews category triggered mass reparses running slow DynamicPageList queries, overloading s3 databases and stalling PHP-FPM, taking down all wikis for 30 minutes."
+  }
+ },
+ {
+  "incident": "Incidents/2021-12-03 mx",
+  "report_excerpt": "The metadata is aimed at helping provide a quick snapshot of context around what happened during the incident.\n{| class=\"wikitable\"\n| '''Incident ID'''\n|2021-12-03 mx\n|'''UTC Start Timestamp:'''\n|YYYY-MM-DD hh:mm:ss\n|-\n|'''Incident Task'''\n| [[phab:T297127|T297127]]\n|'''UTC End Timestamp'''\n|YYYY-MM-DD hh:mm:ss\n|-\n| '''People Paged'''\n|<amount of people>\n|'''Responder Count'''\n|<amount of people>\n|-\n| '''Coordinator(s)'''\n|Names - Emails\n|'''Relevant Metrics / SLO(s) affected'''\n|Relevant metrics\n\n% error budget\n|-\n|'''Impact:'''\n| colspan=\"3\" |For about 24 hours, a portion of outgoing email from wikimedia.org was delayed in delivery. This affected staff Gmail, and Znuny/OTRS/Phabricator notifications. No mail was lost, it was eventually delivered. \n|}\nOn November 24th the Linux kernel on one of our mail servers was upgraded. [https://sal.toolforge.org/log/qkFVUX0B8Fs0LHO5688M]\n\nThen on November 30th changes were made to prioritization of mail servers used for wiki mail which sent more traffic than before to this server. [https://gerrit.wikimedia.org/r/c/operations/puppet/+/742757]\n\nDue to a kernel bug in the iptables conntrack module packets from our mail server towards Google mail servers started to be dropped. [https://www.spinics.net/lists/stable/msg509296.html]\n\nOutgoing mail became stuck in the outgoing queue. [https://grafana.wikimedia.org/d/000000451/mail?orgId=1&from=1638051489230&to=1638576494254]\n\nAfter a while the number of mails in the queue started to trigger mo",
+  "candidates": [
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "deploy",
+   "root_cause_components": [],
+   "triggering_change": "742757",
+   "detected_by": "automated alert",
+   "one_line": "A kernel upgrade and subsequent mail server prioritization change triggered a latent iptables conntrack bug that dropped packets to Google, delaying outgoing email until detected by queue size monitoring."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Kernel upgrade on mail server introduced conntrack bug dropping packets to Google, delaying outgoing wikimedia.org mail for about 24 hours."
+  }
+ },
+ {
+  "incident": "Incidents/2022-03-04 esams availability banner sampling",
+  "report_excerpt": " \nA particular banner was deployed via CentralNotice that was both enabled for all users and with 100% sampling rate for its event instrumentation.\n\nThis caused instabilities at the outer [[Global traffic routing|traffic layer]]. The large amount of incoming traffic for event beacons, each of which had to be handed off to a backend service (eventgate-analytics-external), resulted in connections piling up and Varnish was unable to handle it and other traffic as a result, thus causing wikis to be unreachable in the affected regions. Initially [[Esams data center|Esams datacenter]] clients (mostly Europe, Africa and Middle East), with some temporary issues on other datacenters (Eqiad) as well when we initially attempted to reroute traffic to there.\n[[File:Varnish traffic 2022-03-04 8-12AM.png|thumb|Varnish traffic 08:00-12:00]]\n[[File:Navtiming pageviews 2022-03-04.png|thumb|Impacted pageviews by continent.]]\n[[File:Traffic 2xx requests 2022-03-04.png|thumb|HTTP 2xx responses.]]\n'''Documentation''':\n*[https://grafana.wikimedia.org/d/000000093/varnish-traffic?orgId=1&from=1646382579944&to=1646393415075 Varnish traffic 08:00-12:00 (Grafana)]\n*[https://grafana.wikimedia.org/d/000000479/frontend-traffic?orgId=1&from=1646382611263&to=1646393361590&var-site=All&var-cache_type=text&var-status_type=2 Frontend traffic 2xx responses (Grafana)]\n*[https://grafana.wikimedia.org/d/000000230/navigation-timing-by-continent?orgId=1&from=1646366160339&to=1646404835341 navtiming pageview sampling ",
+  "candidates": [
+   "service:eventgate-analytics-external",
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "A CentralNotice banner enabled for all users with 100% event sampling flooded Varnish with beacon traffic to eventgate, making wikis unreachable in Esams regions."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:eventgate-analytics-external"
+   ],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "CentralNotice banner deployed with 100% sampling rate caused event beacon traffic surge that overwhelmed eventgate-analytics-external and Varnish, making wikis unreachable."
+  }
+ },
+ {
+  "incident": "Incidents/2022-04-26 cr2-eqord down",
+  "report_excerpt": " Since the previous evening (April 25), the Telia link from Eqord to Eqiad was down due to a fiber cut. At 05:00 the next morning, a Telia maintenance began that took down our remaining transports from Eqord, to Codfw and Ulsfo. As a result, we were entirely unable to reach the Eqord networking equipment. There was no end-user impact since Eqord is a network-only location with end-user traffic for [[Codfw data center|Codfw]] and [[Ulsfo data center|Ulsfo]] naturally going there directly instead of via Eqord.\n\n\n<code>eng-64544@nbgw:~$ ping -c 3 208.115.136.238 PING 208.115.136.238 (208.115.136.238) 56(84) bytes of data.  --- 208.115.136.238 ping statistics ---  3 packets transmitted, 0 received, 100% packet loss, time 2055ms</code>\n\nTelia circuit failure logs:\n Apr 25 17:32:42 cr2-eqord fpc0 MQSS(0): CHMAC0: Detected Ethernet MAC Remote Fault Delta Event for Port 5 (xe-0/1/5) \n Apr 26 05:11:57 cr2-eqord fpc0 MQSS(0): CHMAC0: Detected Ethernet MAC Remote Fault Delta Event for Port 3 (xe-0/1/3)\n Apr 26 05:11:57 cr2-eqord fpc0 MQSS(0): CHMAC0: Detected Ethernet MAC Local Fault Delta Event for Port 0 (xe-0/1/0)\n Apr 26 07:15:19 cr2-eqord fpc0 MQSS(0): CHMAC0: Cleared Ethernet MAC Remote Fault Delta Event for Port 3 (xe-0/1/3)\n Apr 26 07:15:47 cr2-eqord fpc0 MQSS(0): CHMAC0: Cleared Ethernet MAC Local Fault Delta Event for Port 0 (xe-0/1/0)\n'''Documentation''':\n\n* [[Network design]]\n* [https://docs.google.com/document/d/13-kHFdSw33P6NJzS95c24zOHaJAKvVSl8DFF3o6VCmY/edit Restricted d",
+  "candidates": [
+   "none"
+  ],
+  "A": {
+   "trigger": "external dependency",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "A Telia fiber cut followed by Telia maintenance took down all Eqord transports, making Eqord network equipment unreachable; no end-user impact."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Telia maintenance took down remaining transports from Eqord after a prior fiber cut, causing total loss of connectivity to Eqord networking equipment."
+  }
+ },
+ {
+  "incident": "Incidents/2022-05-05 Wikimedia full site outage",
+  "report_excerpt": " \n\nA schema change ([[phab:T307501]]) made mariadb's optimizer change its query plan and made a very frequent query to globalblocks table on centralauth database (s7) to take 5 seconds instead of less than a second.\n\n ",
+  "candidates": [
+   "service:grafana",
+   "service:prometheus",
+   "service:schema"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:schema"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "A schema change caused MariaDB optimizer to use a slow query plan for globalblocks, increasing latency and triggering automated alerts."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "service:schema"
+   ],
+   "triggering_change": "785376",
+   "detected_by": "automated alert",
+   "one_line": "A schema change on the globalblocks table changed MariaDB's query plan, slowing a frequent s7 query to 5s and causing an appserver outage until it was reverted."
+  }
+ },
+ {
+  "incident": "Incidents/2022-05-20 Database slow",
+  "report_excerpt": " \n\nOn 2022-05-14 at 8:18 UTC there was a 3 minute impact on uncached traffic (high latency, unavailability) related to application server worker thread exhaustion caused by slow database response. There was no clear root cause at the time. The incident occurred again on the same database host on 2022-05-20 at 09:35 UTC, this time lasting for 5 minutes. After further investigation the likely root cause is a MariaDB 10.6 performance regression under load, further researched in https://phabricator.wikimedia.org/T311106.\n\n'''Documentation''':\n*[https://grafana.wikimedia.org/d/000000438/mediawiki-exceptions-alerts?orgId=1&var-datasource=eqiad%20prometheus%2Fops&viewPanel=18&from=1653039084000&to=1653040837000 MediaWiki Exceptions]",
+  "candidates": [
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "Slow database responses from a likely MariaDB 10.6 performance regression under load exhausted app server workers, causing brief uncached traffic latency/unavailability twice."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "Application server worker thread exhaustion caused by slow database response due to MariaDB 10.6 performance regression under load."
+  }
+ },
+ {
+  "incident": "Incidents/2022-05-25 de.wikipedia.org",
+  "report_excerpt": " \n\nAn increase in POST requests to de.wikipedia.org caused an increase in load on one of the DB servers resulting in an increase in 503 responses and increased response time\n\n ",
+  "candidates": [
+   "service:grafana",
+   "service:text-https"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "service:text-https"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Increase in POST requests to de.wikipedia.org caused DB load spike resulting in 503s and increased latency for text-https service."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Surge of POST requests to de.wikipedia.org root URLs overloaded s5 DB and php-fpm workers, causing 503s and latency; resolved on its own."
+  }
+ },
+ {
+  "incident": "Incidents/2022-05-31 Analytics Hadoop failure",
+  "report_excerpt": " \n \n* At Tue May 31 17:09:10 UTC 2022 analytics-alerts@wikimedia.org received an email alert: \"At least one Hadoop HDFS NameNode is active is CRITICAL\"\n* eng-d76ff, eng-d1098, eng-55c44, and eng-5fe3d jumped in hangout to troubleshoot.\n* /var/lib/hadoop/journal on all 5 journalnodes was full\n* eng-d76ff and eng-d1098 stopped namenodes and journalnodes\n* eng-d1098 increases <code>/var/lib/hadoop/journal</code> on journalnodes from 10 GB to 30 GB\n* eng-d1098 starts journalnodes, then master namenode.\n* eng-d76ff forces HDFS to stay in safe mode.\n* Wait for master namenode to apply edits from journalnodes.\n* Start standby namenode\n* Wait for standby namenode to apply edits\n* eng-d76ff allows HDFS to leave safe mode.\n\n'''Documentation''':\n\nCause analysis:\n\nOn Sunday evening May 22, <code>/srv</code> filled up on an-master1002. an-master1002 takes daily fs image snapshots, and saves them in <code>/srv/backup/hadoop/namenode</code>, keeping the last 20.  Over time, as the number of HDFS blocks has increased, so has the size of these backup images.  \n\nWe received an alert email for a failure of the <code>hadoop-namenode-backup-fetchimage</code> that takes these backups with the subject \"''an-master1002/Check unit status of hadoop-namenode-backup-fetchimage is CRITICAL''\".\n\n24 hours later, this backup job succeeded, even if no new image backup was taken, and we got a RECOVERY status email for this job.  eng-d76ff was on ops week, and only working half days this week.  eng-d76ff most ",
+  "candidates": [
+   "service:superset"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Full /srv on an-master1002 stopped standby NameNode fsimage saves, so JournalNode partitions filled and HDFS NameNodes crashed."
+  },
+  "B": {
+   "trigger": "capacity change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "HDFS NameNodes crashed because journalnode partitions filled up after standby NameNode stopped saving FS images due to a full /srv backup partition."
+  }
+ },
+ {
+  "incident": "Incidents/2022-07-11 Shellbox and parsoid saturation",
+  "report_excerpt": " \n\nThe reason appears to be background parsing associated with VisualEditor. The MWExtensionDialog as used in Score has the default 0.25s debounce preview, meaning we're shelling out to Lilypond through Shellbox every quarter-second while the user is typing -- regardless of whether an existing shellout is in flight. That's reasonable for lots of parsing applications that take much less time than that, but for something as heavy as these score parses, we should extend that interval, which would have the effect of cutting down on the request rate to shellbox.\n\n ",
+  "candidates": [
+   "service:grafana",
+   "service:mobileapps",
+   "service:shellbox"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "service:shellbox"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Shellbox service failed probes due to excessive Lilypond shellouts from VisualEditor's default debounce preview interval."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [
+    "service:shellbox"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "VisualEditor Score previews shelled out to Lilypond via Shellbox every 0.25s while typing, overloading Shellbox and triggering ProbeDown pages."
+  }
+ },
+ {
+  "incident": "Incidents/2022-07-13 brief outbound bandwidth spike eqsin",
+  "report_excerpt": " \n\nBrief outbound bandwidth spike for upload in [[Eqsin data center|Eqsin dc]]. Recovered by itself.\n\n* [https://docs.google.com/document/d/15pEoJM05a8oS2LHAyq3F0ZHMpvGUO3dS6aANAzl1x38/edit# Restricted details].\n* [https://grafana.wikimedia.org/d/-K8NgsUnz/home?orgId=1&from=1657717200000&to=1657722600000 Grafana]",
+  "candidates": [
+   "service:grafana",
+   "service:upload"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "service:upload"
+   ],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "Brief outbound bandwidth spike for upload in the Eqsin data center that recovered on its own."
+  },
+  "B": {
+   "trigger": "unknown",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "Brief outbound bandwidth spike for upload in Eqsin dc that recovered by itself."
+  }
+ },
+ {
+  "incident": "Incidents/2022-09-08 codfw appservers degradation",
+  "report_excerpt": " \n\nAn Nginx server restart (RC) triggered an <code>etcdmirror</code> outage that started affecting end-users during a subsequent MediaWiki deployment. The etcd outage led to php-fpm not being able to contact its configuration server and failing to restart for the deployment. The appservers got depooled because of the failure until pybal depool protection kicked in. When etcdmirror was restarted to resolve the restart issue, the configuration state with the depooled servers was synchronized, which triggered the depooling of 50% of codfw api-https, api_appserver, appserver, and parsoid servers.\n\n ",
+  "candidates": [
+   "host:conf1009",
+   "host:conf2005",
+   "service:config-master",
+   "service:grafana",
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "host:conf2005"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Nginx restart on conf2005 caused etcdmirror to crash during MediaWiki deployment, leading to php-fpm failures and mass depooling detected by engineers."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [
+    "host:conf1009",
+    "host:conf2005"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Nginx restart on conf1009 crashed etcdmirror on conf2005; deployment failures depooled appservers, and etcdmirror restart synced depools, depooling 50% of codfw servers."
+  }
+ },
+ {
+  "incident": "Incidents/2022-10-06 eqiad row D networking",
+  "report_excerpt": " \n\nAfter the row C uplinks change (part of [[phab:T313463|T313463]]) was completed successfully, the same procedure got applied to row D's link to cr1-eqiad. While the asw side went fine (and took down the link as planned, waiting for the cr side to be reconfigured), the configuration change on the cr1 discarded traffic toward that switch. Traffic flowing from cr2 to row D was not impacted. Additionally the VRRP gateway was set to cr2, so outbound traffic from row D was not impacted as well.\n\nTroubleshooting was made more difficult as bast1003 is in row D causing management access to be lost. The change was done with an automatic rollback timeout of 2min. At that 2 min mark, the change got automatically reverted, restoring full connectivity before I was able to connect through a different bast host.\n\nThe exact root cause of why the traffic was discarded is so far still unknown. Safe troubleshooting (eg. remove ae4 IP config, to test lower layer connectivity) will be done at a later date.\n\nThe 2 dbproxies affected (for m3, m5) were passive, they were reloaded manually afterwards to point back into the usual primary hosts.\n\n ",
+  "candidates": [
+   "host:dbproxy1016",
+   "service:grafana",
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "During planned row D uplink migration, cr1-eqiad config change discarded traffic to row D switch; auto-rollback after 2 minutes restored connectivity."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Configuration change on cr1-eqiad during row D uplink maintenance discarded traffic, causing an outage that was automatically rolled back after 2 minutes."
+  }
+ },
+ {
+  "incident": "Incidents/2022-11-03 conf disk space",
+  "report_excerpt": " \n\nA bug introduced to the MediaWiki codebase caused an increase in connections to [[Confd]] hosts from systems responsible for [[Dumps]] which in turn lead to a high volume of log events and ultimately a filled up filesystem.\n\n ",
+  "candidates": [
+   "host:conf1008"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [
+    "host:conf1008"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "A MediaWiki bug caused excessive connections from dump systems to conf1008, filling the filesystem with logs and triggering a disk space critical alert."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "MediaWiki bug made dumps snapshot hosts hammer etcd/confd per database row, flooding logs and filling disks on conf100* hosts."
+  }
+ },
+ {
+  "incident": "Incidents/2022-11-04 Swift issues",
+  "report_excerpt": " \u2026 \n\nFor 49 minutes the Swift/mediawiki file backend returned errors (how many? Which percentage?) for both reads and new uploads.  ",
+  "candidates": [
+   "host:ms-fe1010",
+   "host:ms-fe1011",
+   "host:ms-fe1012",
+   "host:ms-fe2009",
+   "service:grafana",
+   "service:swift",
+   "service:thumbor"
+  ],
+  "A": {
+   "trigger": "unknown",
+   "root_cause_components": [
+    "service:swift"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Swift media file backend returned errors for reads and uploads for 49 minutes; resolved by restarting swift-proxy on frontends and repooling hosts."
+  },
+  "B": {
+   "trigger": "unknown",
+   "root_cause_components": [
+    "service:swift",
+    "host:ms-fe1010",
+    "host:ms-fe1011",
+    "host:ms-fe1012",
+    "host:ms-fe2009"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Swift file backend errors for reads and uploads detected by automated monitoring, involving multiple frontend hosts and swift-proxy restarts."
+  }
+ },
+ {
+  "incident": "Incidents/2022-11-15 asw1-eqsin",
+  "report_excerpt": " \n\n\n Connecting a new server to our eqsin top of rack switches triggered a Juniper [https://prsearch.juniper.net/problemreport/PR1080132 bug]  which caused one of its processes to be killed and interrupting traffic transiting through the switch. This event caused also a Virtual-Chassis master switchover extending the outage. The process got automatically re-started and the situation stabilized by itself in about 5min.\n\n ",
+  "candidates": [
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Connecting a new server to eqsin top of rack switches triggered a Juniper bug causing a process crash and traffic interruption."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Connecting a new server to eqsin top-of-rack switches triggered a Juniper bug killing a process and causing virtual-chassis switchover; ~5 minute traffic outage."
+  }
+ },
+ {
+  "incident": "Incidents/2022-11-17 Gerrit 3.5 upgrade",
+  "report_excerpt": " \n\nAn upgrade of Gerrit from 3.4.8 to 3.5.4 was scheduled on November 17th at 9:00 UTC. After the upgrade, the root partition filled up causing Gerrit to no longer be able to write to its indexes. The first symptoms were inability to write a comment or cast a vote. The service got stopped entirely to relocate Gerrit data to a dedicated partition. The upgraded Gerrit was back at 11:45 UTC.\n\n ",
+  "candidates": [
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "deploy",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Gerrit upgrade to 3.5.4 filled the root partition during reindexing, causing write failures until data was relocated to a dedicated partition."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Gerrit upgrade to 3.5.4 reindexing filled root partition (large H2 caches), breaking writes; Icinga disabled for maintenance, fixed by relocating data."
+  }
+ },
+ {
+  "incident": "Incidents/2022-12-02 wdqs outage",
+  "report_excerpt": " \n\n \n\nAn AWS bot overloaded WDQS causing CPU usage spikes/increased lag. A requestctl rule was put into place to block a specific offending user agent.",
+  "candidates": [
+   "host:lvs1020",
+   "host:wdqs1012",
+   "host:wdqs1014",
+   "host:wdqs1016"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "An AWS bot overloaded WDQS with heavy queries, causing CPU spikes and lag; a requestctl rule blocked the offending user agent."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "host:wdqs1012",
+    "host:wdqs1014",
+    "host:wdqs1016"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "AWS bot overloaded WDQS causing CPU spikes and lag, detected by PyBal alerts on lvs1020 affecting multiple wdqs hosts."
+  }
+ },
+ {
+  "incident": "Incidents/2022-12-09 api appserver worker starvation",
+  "report_excerpt": " \n\n\u2026\n\n [[phab:T320518#8455510|Increased mediawiki logging]]  led to eventgate-analytics congestion, starving the api_appservers of idle workers. No user-facing impact.\n\n ",
+  "candidates": [
+   "service:eventgate-analytics",
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:eventgate-analytics"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Increased mediawiki logging led to eventgate-analytics congestion and api_appserver worker starvation."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "service:eventgate-analytics"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Increased MediaWiki logging congested eventgate-analytics (CPU throttled pods), starving api_appserver PHP-FPM idle workers; fixed by adding replicas and reverting logging."
+  }
+ },
+ {
+  "incident": "Incidents/2022-12-18 World Cup",
+  "report_excerpt": " \n\nFor approximately 24 minutes, uncached calls to the API on the eqiad datacenter overloaded the application servers, running out of threads (all busy) creating unreasonable latency or failing to respond to requests. This caused sending errors to some clients using the action API and Parsoid in the primary datacenter. Elevated latencies persisted for the following 3 hours, when traffic load organically went down.\n\nThis was caused by the DiscussionTools MediaWiki extension adding a ResourceLoader module on almost all page views -even non-discussion pages- which created an API call, that, combined with a significant 50% increase in overall traffic, led to an overload and increased latencies on the API cluster. codfw app server cluster was mostly unaffected due to not receiving POST uncached traffic at the time (it is read-only).\n\n ",
+  "candidates": [
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "A 50% traffic increase during the World Cup combined with DiscussionTools API calls overloaded eqiad API servers, detected by automated monitoring alerts."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [],
+   "triggering_change": "866502",
+   "detected_by": "automated alert",
+   "one_line": "DiscussionTools module triggering uncached API calls on most page views, plus World Cup 50% traffic surge, overloaded eqiad API app servers for 24 minutes."
+  }
+ },
+ {
+  "incident": "Incidents/2023-01-09 API errors - db1143",
+  "report_excerpt": " \n\n ",
+  "candidates": [
+   "service:alertmanager"
+  ],
+  "A": {
+   "trigger": "unknown",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Database server overload, possibly from onLinksUpdateComplete commons file usage queries, paged SREs; DBA depooled the server, resolving the issue quickly."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Alertmanager SMS alerted SREs to an issue likely caused by unthrottled onLinksUpdateComplete checking commons file usage, resolved by DBA depooling a server."
+  }
+ },
+ {
+  "incident": "Incidents/2023-01-14 asw-b2-codfw failure",
+  "report_excerpt": " \n\n\u2026\n\nSwitch asw-b2-codfw failed; asw-b-codfw master failed over to b7 as designed. This, however, left all the systems in B2 offline. A volunteer noticed the alerts, and used Klaxon. We were unable to restore asw-b2-codfw to service, and depooled the swift and thanos frontends in B2. This left us operational, but at reduced redundancy. \n\nA further complication was that lvs2008 reaches all of row B via asw-b2-codfw, which meant that trying to change things in codfw on Monday was difficult; as a result of which mediawiki in codfw was depooled until asw-b2-codfw could be replaced.\n\n ",
+  "candidates": [
+   "host:mc2042",
+   "host:mc2043",
+   "host:ml-cache2002",
+   "host:ms-be2041",
+   "host:ms-be2046",
+   "host:ms-fe2010",
+   "host:thanos-fe2001",
+   "host:thanos-fe2002",
+   "service:swift"
+  ],
+  "A": {
+   "trigger": "hardware failure",
+   "root_cause_components": [
+    "host:mc2042",
+    "host:mc2043",
+    "host:ml-cache2002",
+    "host:ms-be2041",
+    "host:ms-be2046",
+    "host:ms-fe2010",
+    "host:thanos-fe2002"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Switch asw-b2-codfw failed causing multiple hosts in rack B2 to go offline and be depooled."
+  },
+  "B": {
+   "trigger": "hardware failure",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Switch asw-b2-codfw failed, taking all B2 rack hosts offline; swift and thanos frontends depooled, running with reduced redundancy until replacement."
+  }
+ },
+ {
+  "incident": "Incidents/2023-02-11 logstash latency",
+  "report_excerpt": " \n\neqiad's Logstash experienced message congestion that exhausted the latency budget. This incident consumed 160% of the quarterly budget for delayed messages.\n\n ",
+  "candidates": [
+   "service:grafana"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "A flood of Parsoid PHP notices (8.6M messages) caused eqiad Logstash Kafka consumer lag, burning 160% of the quarterly latency SLO budget unnoticed."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Logstash message congestion caused by a flood of Parsoid exceptions exhausted the latency budget and was not noticed until end-of-quarter reporting."
+  }
+ },
+ {
+  "incident": "Incidents/2023-02-22 read only",
+  "report_excerpt": " \n\nWhile performing a [[phab:T330271|live switchover test]] in advance of the [[phab:T327920|2023 WMF datacenter switchover]], an existing logical bug on the switchover test script accidentally set the secondary datacenter in read-only mode. While this didn't disrupt most users, mobile editing for people geolocated to codfw app servers (mostly, people in the Americas, and part of Asia and Oceania) had the editing interface disabled (while desktop users were redirected to edit through eqiad). While trying to fix this issue, an tooling interface issue caused all datacenters to be set in read-only mode, disabling editing for all users. This was quickly reverted for both datacenters and editing was restored.\n\n ",
+  "candidates": [
+   "none"
+  ],
+  "A": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "A live switchover test script bug accidentally set the secondary datacenter to read-only, disabling mobile editing until reported by users."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "A switchover live-test script bug set codfw read-only, disabling mobile editing; a confctl fix attempt then made all datacenters read-only briefly."
+  }
+ },
+ {
+  "incident": "Incidents/2023-07-19 enrich job outage",
+  "report_excerpt": " ",
+  "candidates": [
+   "service:mw-page-content-change-enrich"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [
+    "service:mw-page-content-change-enrich"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "mw-page-content-change-enrich stalled when messages exceeded Kafka's maximum message size, degrading SLIs; the application was manually restarted and caught up on consumer lag."
+  },
+  "B": {
+   "trigger": "unknown",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Alerts triggered by degrading SLIs led to identification of Kafka message size issues requiring filtering and max size increase."
+  }
+ },
+ {
+  "incident": "Incidents/2023-08-09 mw-on-k8s outage due to wrong tls cert",
+  "report_excerpt": " A change to the global k8s defaults was merged that made the next mediawiki on kubernetes deployment pick up a wrong certificate for TLS termination.  ",
+  "candidates": [
+   "service:grafana",
+   "service:mw-api-ext",
+   "service:mw-api-int"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:mw-api-ext",
+    "service:mw-api-int"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "A merged change to global k8s defaults caused mediawiki deployments to use the wrong TLS certificate, triggering ProbeDown alerts for mw-api-ext and mw-api-int."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "A global k8s defaults change switched to cert-manager certificates, so the next MediaWiki-on-k8s deployment used wrong TLS certs, failing mw-api probes."
+  }
+ },
+ {
+  "incident": "Incidents/2023-09-20 mw-page-content-change-enrich",
+  "report_excerpt": " \n\n\u2026\n\n The mw-page-content-change-enrich (flink) app is failing to start in eqiad (passive DC because of a network timeout on a dependent service (thanos-swift) <nowiki>https://logstash.wikimedia.org/goto/ce1765e186329ed74f179d375f8df182</nowiki>.\n\nThe app needs swift for HA. The connection failure caused the k8s operator to fail startup. The incident was caused by incorrect egress rules. Since the app is DC agnostic, egress rules must be set for both DCs ip ranges for all deployments.\n\nThis issue was fixed by applying the proper egress rules, a re-deploying the application. The active DC deployment was not affected. ",
+  "candidates": [
+   "service:mw-page-content-change-enrich",
+   "service:prometheus",
+   "service:swift",
+   "service:thanos-swift"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:mw-page-content-change-enrich",
+    "service:thanos-swift"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "mw-page-content-change-enrich failed to start in eqiad due to misconfigured egress rules blocking access to thanos-swift."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [
+    "service:mw-page-content-change-enrich"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "After DC switchover depooled thanos-swift in eqiad, mw-page-content-change-enrich failed to start in passive DC due to misconfigured egress rules."
+  }
+ },
+ {
+  "incident": "Incidents/2023-09-27 Kafka-jumbo mirror-makers",
+  "report_excerpt": " \n\n= '''Current status: resolved''' =\n{| class=\"wikitable\"\n|''incident coordinator:'' '''eng-d10cc\n|''status last updated:'' '''n/a'''\n|}\n''Responders''''': eng-6c964 ,eng-b8651, eng-03587, eng-2fb8e, eng-a1f77 (WDQS), eng-28f06 (WDQS)'''\n\nProvide some bullet points communicating:\n\n* End users of mediawiki projects are not currently affected\n** We are seeing mirror makers crashing and restarting, when mirroring topics from main-eqiad to kafka-jumbo.\n** This may have a knock-on effect on our data processing pipelines, but we are not aware of any data loss at the moment.\n** Wikidata Query Service updates were lagging during the outage, leading to self-throttling of bots and stale data being returned to users.\n* The mirror-maker processes start up successfully, but then crash at some time afterwards.\n* They are restarted by systemd, but continue to crash in this loop.\n* We have not seen any other mirror-maker processes fail\n[[File:Mirror-maker-2023-09-28 09-59.png|alt=Graphs of the topic replication rate and consumer lag |frameless|660x660px]]\n\n ",
+  "candidates": [
+   "host:kafka-jumbo1015",
+   "service:alertmanager",
+   "service:grafana",
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "capacity change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Kafka MirrorMaker main-eqiad to jumbo crash-looped for ~12h due to a Kafka bug triggered by running 15 instances; fixed by limiting to 9."
+  },
+  "B": {
+   "trigger": "capacity change",
+   "root_cause_components": [
+    "host:kafka-jumbo1015"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "MirrorMaker crash loop caused by a latent Kafka bug triggered when scaling to 15 instances, detected by engineers on IRC."
+  }
+ },
+ {
+  "incident": "Incidents/2023-09-29 CloudVPS vms losing network connectivity",
+  "report_excerpt": " \n\n During a package cleanup,   was merged to remove some packages. This caused to bullseye VMs in the cloud realm to remove isc-dhcp-client, and once the ip leases for these started to expire the VMs started losing network connectivity.\n\nThis eventually included the proxies CloudVPS uses to serve external traffic, making any hosted project lose that traffic too.\n\nThis also took down the metricsinfra VMs that are in charge of the monitoring and alerting for CloudVPS hosted projects, so there were no alerts from it.\n\nFrom there recovery included having to roll-reboot all the toolforge VMs that depend on the nfs servers as the nfs service itself got affected and clients got stuck (common procedure, but slow).\n\n ",
+  "candidates": [
+   "service:alertmanager"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": "961005",
+   "detected_by": "human report",
+   "one_line": "A puppet package-cleanup patch removed isc-dhcp-client from bullseye Cloud VPS VMs; expiring DHCP leases cut network connectivity, taking down proxies, metricsinfra and NFS."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [],
+   "triggering_change": "961005",
+   "detected_by": "human report",
+   "one_line": "A merged package cleanup change removed isc-dhcp-client from VMs, causing network connectivity loss when leases expired and taking down proxies and monitoring."
+  }
+ },
+ {
+  "incident": "Incidents/2024-02-28 etcd-mirror",
+  "report_excerpt": " \n\n[[Conftool]] data, stored in [[etcd]], is normally replicated from one data center to the other (currently eqiad to codfw) using an in-house tool called [https://gerrit.wikimedia.org/r/plugins/gitiles/operations/software/etcd-mirror/+/refs/heads/master/etcdmirror etcd-mirror]. Etcd-mirror is intentionally fairly brittle to replication problems; when it encounters an unexpected situation, it stops replicating and pages us, rather than attempt to self-recover and risk corrupting the etcd state.\n\nDue to an unusual sequence of data changes (detailed below) etcd-mirror's long-running watch lost track of the up-to-date state of etcd in eqiad, and replication stopped. This had no immediate user impact, but subsequent conftool changes (like pooling/depooling hosts in load-balanced clusters, pooling/depooling data centers in service discovery, or requestctl changes) would not have been propagated between data centers, leaving us without emergency tools and potentially causing a dangerous skew in production config.\n\n ",
+  "candidates": [
+   "host:conf1009",
+   "host:conf2005",
+   "service:alertmanager"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "etcd-mirror replication stopped after an unusual surge of non-conftool etcd events exceeded the 1000-event watch retention limit, detected by automated alerting."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Over 1,000 consecutive non-conftool etcd events from Spicerack cookbook locks exceeded etcd v2 event retention, breaking etcd-mirror replication eqiad\u2192codfw; fixed by manually advancing index."
+  }
+ },
+ {
+  "incident": "Incidents/2024-05-28 wikikube-api",
+  "report_excerpt": " \n\n Triggered by a failed scap deployment of MediaWiki, the team dug into figuring out the underlying causes, unearthing a network and CPU saturation at the WikiKube Kubernetes cluster api servers. Aside from the issue being witnessed by 2 deployers, no other discernible impact was observed. As an inadvertent result of the investigation, scap deployments became faster.\n\nThey were multiple interrelated causes that contributed and made debugging slower\n\n# For the past few months, during any MW deploy, we've been saturating k8s control plane CPU in both [https://grafana-rw.wikimedia.org/goto/UzvUYZsIR?orgId=1 eqiad] and [https://grafana-rw.wikimedia.org/goto/GxZlYWyIR?orgId=1 codfw]. [[File:2024-05-28 k8s codfw cpu saturation.png|alt=A graph showing slowly increase CPU saturation for codfw api servers|thumb|A graph showing slowly increasing CPU saturation for codfw api servers]][[File:2024-05-28 api eqiad.png|alt=A graph showing slowly increase CPU saturation for eqiad api servers|thumb|A graph showing slowly increasing CPU saturation for eqiad api servers]]The saturation also manifested as [https://grafana.wikimedia.org/goto/hIvtEZsSg?orgId=1 slowly increasing latencies for blackbox probes]\n# More and more worker servers were being added to the WikiKube clusters\n# 1 of the kubemaster VMs was on a 1G Ganeti node, the other one on a 10G ganeti node. After the first incident, the second kubemaster (the one on 1G ganeti node) took over part of the load. Network wise, it was unable ",
+  "candidates": [
+   "host:ganeti1037",
+   "service:grafana",
+   "service:kubemaster"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:kubemaster"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Failed MediaWiki scap deploy revealed CPU and network saturation on WikiKube k8s API servers, worsened by OpenTelemetry collector traffic and a 1G Ganeti node."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "service:kubemaster"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Failed MediaWiki deployment caused by CPU and network saturation on Kubernetes API servers exacerbated by OpenTelemetry collector traffic."
+  }
+ },
+ {
+  "incident": "Incidents/2024-06-10 puppet volatile data broken sync",
+  "report_excerpt": " \n\n\n Something happened between 2024-04-27 00:00 and 2024-04-27 00:08 UTC, and the rsync clients of most puppetmasters/puppetservers to sync data from puppetmaster1001 hung indefinitely.  On 2024-06-10, they were killed and restarted manually.\n\nThis means that new data from puppet 'volatile' was only rarely/intermittently synced to much of the fleet during this window.\n\nThe problem was particularly bad in codfw, where all 3 puppetservers had failed to rsync data for the entire duration.\n\nGetting a firm idea of the impact of this is difficult.  The new GeoLite2 files were unavailable, but also not in use in production yet(?).  The older 'enterprise' file was still being used for many uses, however, and would have grown stale.  Analytics (a heavy user of GeoIP data) was probably not very affected because it is eqiad-only.  Any CheckUser calls would have likely been affected by stale data.  \n\nOn the other hand, aside from the one service wishing to use newly-added files ... no one noticed?  So this puts a sort of upper bound on the potential impact, however unsatisfying.  \n\n ",
+  "candidates": [
+   "none"
+  ],
+  "A": {
+   "trigger": "unknown",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Rsync clients on puppetmasters hung indefinitely due to lack of timeouts and monitoring, causing stale data sync until manually restarted after an engineer noticed missing files."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Rsync clients syncing puppet volatile data from puppetmaster1001 hung indefinitely for ~6 weeks due to no timeouts, leaving GeoIP data stale, especially in codfw."
+  }
+ },
+ {
+  "incident": "Incidents/2024-06-21 - 2024-06-24 Outage Incidents - Dumps Generation Issues",
+  "report_excerpt": " \n\nWikimedia full dumps put pressure on the databases, this pressure resulted in errors on mediawiki attempting to access the database. The speed and volume of the errors caused a flood of udp logs which overwhelmed the network, causing an outage for the wikis.\n\n ",
+  "candidates": [
+   "none"
+  ],
+  "A": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "Wikimedia full dumps caused database errors and a UDP log flood that overwhelmed the network, resulting in a wiki outage."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "unknown",
+   "one_line": "Full Wikimedia dumps pressured databases, causing MediaWiki DB errors whose UDP log flood overwhelmed the network, taking wikis down."
+  }
+ },
+ {
+  "incident": "Incidents/2024-07-21 s4 and x1 write overload",
+  "report_excerpt": " \n\nDatabase servers became unavailable with errors like <code>Wikimedia\\Rdbms\\DBUnexpectedError: Database servers in extension1 are overloaded. In order to protect application servers, the circuit breaking to databases of this section have been activated. Please try again a few seconds.</code>\n\nThis is because s4 gets overloaded and it brings down x1 with itself, bringing down services.\n\nA previous incarnation of this incident occurred on 2024-07-13.\n\n ",
+  "candidates": [
+   "host:db1160",
+   "host:db1238",
+   "service:grafana",
+   "service:mw-api-ext"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "s4 database section became overloaded by high write queries, dragging down x1 and causing MediaWiki API 5XX errors until write load was reduced."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "host:db1238"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Database servers in s4 became overloaded due to write queries exceeding 400 wr/s during a switchover from db1238 to db1160, triggering circuit breaking and 5XX errors detected by automated alerts."
+  }
+ },
+ {
+  "incident": "Incidents/2024-09-18 replication",
+  "report_excerpt": " \n\n In anticipation of the [[datacenter switchover]] of the following week, core databases were reconfigured from replicating data in the direction of eqiad -> codfw datacenters to setting up [[MariaDB/Switch Datacenter#The week before the switchover|circular replication]], so when codfw would be set as the primary & only active dc for testing, data flows automatically back to eqiad. Sadly, while the cookbook worked perfectly for STATEMENT-based replication servers, ROW based replication servers contained an unexpected hurdle: when replication in the direction codfw -> eqiad was setup and pt-heartbeat started, due to cleaned up heartbeat rows, it updated an existing row on codfw servers but failed to do so on eqiad ones, as that row was missing. This caused no issue on STATEMENT-based replication servers, as pt-heartbeat does REPLACE (upsert), but row-format only has capabilities for either write or delete+write a new row. The latter caused replication to break and stop with an error of \"missing row\" on eqiad x1 servers.\n\nAt first this was unnoticed due to a gap in monitoring, so replication broke on both x1 and es6 sections. When handing the issue, and attempting to delete all heartbeat table rows, the issue on x1 didn't get fixed, it only moved to codfw, starting the user impact (as replication being broken in the eqiad -> codfw direction wasn't an issue). This was quickly mitigated by skipping heartbeat replication with <code>SET GLOBAL Replication_wild_ignore_table='heart",
+  "candidates": [
+   "host:db2196"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": "693162",
+   "detected_by": "human report",
+   "one_line": "Setting up circular replication broke ROW-based x1/es replication because pt-heartbeat rows were missing, a latent issue from an old puppet change."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": "693162",
+   "detected_by": "human report",
+   "one_line": "Circular replication setup failed on ROW-based servers due to a prior Puppet change causing pt-heartbeat updates to fail on missing rows, detected manually before monitoring alerted."
+  }
+ },
+ {
+  "incident": "Incidents/2024-10-24 codfw pc and kafka mirrormaker issues",
+  "report_excerpt": " \n\nThe [[mediawikiwiki:Manual:Parser_cache|Parser cache]] database for a single section (p2) in codfw became saturated by connections, causing failures to render and update Wiki pages. This connection spike was partially related to a surge in reparse jobs coming from the job queue as a result of a large shared template update. Newly deployed parsercache hosts accidentally did not have the query killer installed Additionally, an aggressive scraper was creating new parse activity throughout the outage. \n\nUser impact was limited by depooling mw-web-ro in codfw and pooling it in eqiad at 11:17, despite the outage spanning a longer timeframe. \n\nAdditional, as this incident progressed, alerts began to appear related to the [[Kafka#Multi Datacenter|Kafka MirrorMaker]] service due to a severe backlog in a single partition. \n\n ",
+  "candidates": [
+   "host:lvs2014",
+   "host:pc1017",
+   "host:wikikube-worker2033",
+   "host:wikikube-worker2102",
+   "service:changeprop",
+   "service:grafana",
+   "service:text-https"
+  ],
+  "A": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "host:lvs2014",
+    "host:wikikube-worker2033",
+    "host:wikikube-worker2102",
+    "service:text-https"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Newly deployed parsercache hosts missing query killer caused connection saturation and rendering failures during a template update surge and scraper activity."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [
+    "service:changeprop"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Parsercache pc2 in codfw saturated by connections from template-update reparse jobs via changeprop and a scraper, missing query killer; pages failed to render."
+  }
+ },
+ {
+  "incident": "Incidents/2024-11-25 WMCS proxy nginx failure",
+  "report_excerpt": " \n\n* '''Systemd unit for nginx failed in proxy-04 VM'''\n* '''This was caused by Puppet removing the \u201cnameserver\u201d IP from Nginx configuration files'''\n* '''It\u2019s a known bug already tracked in [[phab:T379927|T379927]]'''\n ",
+  "candidates": [
+   "service:alertmanager",
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Puppet removed nameserver IP from Nginx config causing systemd unit failure on proxy-04, detected by ProjectProxyMainProxyDown alert."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Known Puppet bug removed nameserver from resolv.conf and nginx configs on proxy-04, causing nginx to fail; paged, fixed by restoring resolv.conf."
+  }
+ },
+ {
+  "incident": "Incidents/2024-12-03 Port saturation from cached Varnish HEAD-GET upgrades",
+  "report_excerpt": " \n\nIncoming HEAD requests from Wikimedia Enterprise (WME) to [[Apache Traffic Server]] (ATS) resulted in ATS sending a GET to the backend and caching the response. This caused the backend's cache to become \"poisoned\" with irrelevant cache objects or traffic. Changing ATS' caching behaviors to skip such caching when coming from WME IPs restored desired traffic levels.\n\n ",
+  "candidates": [
+   "host:cp1107"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Wikimedia Enterprise HEAD requests made ATS fetch and cache full GET responses, saturating eqiad switch links until caching for WME IPs was skipped."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "host:cp1107"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Wikimedia Enterprise HEAD requests caused ATS to cache irrelevant objects and saturate cp1107, detected by port utilization alert."
+  }
+ },
+ {
+  "incident": "Incidents/2025-02-17 maps",
+  "report_excerpt": " \n\nThe SRE team was trying to move the Kartotherian service from bare metal nodes to Kubernetes. The service is the frontend responsible for the <code>maps.wikimedia.org</code> traffic, rendering maps in various formats and optionally additional data/shapes (for example, a path from A to B hovering the map of a given city).\n\nThe Service was deployed on both bare metal and Kubernetes, and eng-f7501 (SRE Infra Foundations) was trying to shift traffic away from bare metal nodes to progress the migration. Due to a missing setting on the Kubernetes cluster, Kartotherian running on it wasn't able to respond to any HTTP request and shifting traffic away from bare metal nodes (properly serving traffic) caused increased pressure in the remaining capacity ending up in overload and timeouts. ",
+  "candidates": [
+   "host:lvs1019",
+   "service:grafana",
+   "service:kartotherian",
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "service:kartotherian"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Kartotherian outage caused by missing LVS Loopback IP setting on Kubernetes nodes during migration traffic shift, leading to backend overload and health check failures."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:kartotherian"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Depooling Kartotherian bare metal nodes during Kubernetes migration overloaded remaining hosts because k8s nodes lacked the LVS loopback IP and served nothing."
+  }
+ },
+ {
+  "incident": "Incidents/2025-02-19 maps",
+  "report_excerpt": " \n\nThe Kartotherian service on Kubernetes didn't have its TLS certificate properly configured (missing the maps.wikimedia.org SAN), and around 31000 HTTP requests ended up in 50X errors over the course of some hours.\n\n ",
+  "candidates": [
+   "service:kartotherian"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:kartotherian"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Pooling Wikikube workers for Kartotherian with a TLS cert missing the maps.wikimedia.org SAN caused ~31000 HTTP 50x errors over hours."
+  },
+  "B": {
+   "trigger": "deploy",
+   "root_cause_components": [
+    "service:kartotherian"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Kartotherian TLS certificate missing maps.wikimedia.org SAN caused 50X errors after pooling Wikikube workers, detected hours later via dashboard check."
+  }
+ },
+ {
+  "incident": "Incidents/2025-05-07 cloud-vps security groups deleted",
+  "report_excerpt": " \n\nA change in security groups (to fill up) causes outages on some cloud vps VMs and projects\n*This affects toolforge (build service down)\n*This affects quarry (webservice down)\n*This affects prometheus (grafana unable to get data from it)\n*Potentially others\n\nAs part of ongoing efforts to make all of cloud-vps work with IPv6, we just now ran an automated script to expand existing security group rules to ipv6 access. A bug in that script effectively destroyed existing rules rather than updating them, which caused many open doors to unceremoniously slam shut.\n\nIn order to recover from this as quickly as possible, we restored a backup of the network database from earlier today (04:28 UTC). This restored service but also wiped out any networking changes that might have been made during that time.\n\n ",
+  "candidates": [
+   "service:grafana",
+   "service:prometheus"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Buggy script expanding Cloud VPS security group rules to IPv6 deleted existing rules, breaking Toolforge, Quarry, Prometheus access; fixed by restoring Neutron DB backup."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "A buggy automated script expanding security group rules for IPv6 deleted existing rules instead of updating them, causing outages across cloud-vps services including Toolforge, Quarry, and Prometheus/Grafana."
+  }
+ },
+ {
+  "incident": "Incidents/2025-06-30 eventgate-analytics has stopped producing events",
+  "report_excerpt": " \n\nA mediawiki config change inadvertently disabled MediaWiki logging via EventBus The change was reverted and the event production rate is back to pre-incident levels. . This incident impacted all MediaWiki streams routed through eventgate-analytics:\n\n* <code>api-gateway.request</code>\n* <code>mediawiki.api-request</code>\n* <code>mediawiki.cirrussearch-request</code>\n* <code>'/^swift\\.(.+\\.)?upload-complete$/'</code>\n\n<code>wdqs</code> and <code>wcqs</code> streams were not affected by this incident. ",
+  "candidates": [
+   "service:eventgate-analytics",
+   "service:swift",
+   "service:upload"
+  ],
+  "A": {
+   "trigger": "config change",
+   "root_cause_components": [
+    "service:eventgate-analytics"
+   ],
+   "triggering_change": "1163323",
+   "detected_by": "human report",
+   "one_line": "A MediaWiki config change inadvertently disabled EventBus logging, stopping event production to eventgate-analytics until reverted."
+  },
+  "B": {
+   "trigger": "config change",
+   "root_cause_components": [],
+   "triggering_change": "1163323",
+   "detected_by": "human report",
+   "one_line": "A MediaWiki config change disabled EventBus logging, so eventgate-analytics streams lost events for days until it was manually noticed and reverted."
+  }
+ },
+ {
+  "incident": "Incidents/2025-07-11 WMCS Ceph issues causing Toolforge and Cloud VPS failures",
+  "report_excerpt": " \n\n* Toolforge tools were not responding to http requests (Tools-proxy-9 was returning an error page)\n* We found that Ceph had intermittent issues since last night, after some hosts were upgraded to Bookworm\n* This caused intermittent issues to both Toolforge and Cloud VPS\n* We downgraded back to Bullseye the 6 hosts that were previously upgraded to Bookworm\n ",
+  "candidates": [
+   "host:cloudcephosd1037"
+  ],
+  "A": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Ceph hosts upgraded to Bookworm misbehaved intermittently, taking down Toolforge tools and Cloud VPS VMs until downgraded back to Bullseye."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [
+    "host:cloudcephosd1037"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Toolforge tools were unresponsive due to Ceph issues caused by upgrading hosts to Bookworm, resolved by downgrading back to Bullseye."
+  }
+ },
+ {
+  "incident": "Incidents/2025-11-05 WMCS toolsdb primary out of space",
+  "report_excerpt": " \n\n\u2026\n\n ",
+  "candidates": [
+   "service:alertmanager"
+  ],
+  "A": {
+   "trigger": "latent bug",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "ToolsDB ran out of disk space as ibdata1 grew uncontrollably on tools-db-4, breaking tool connections; users reported it as no write-check alert existed."
+  },
+  "B": {
+   "trigger": "latent bug",
+   "root_cause_components": [
+    "service:alertmanager"
+   ],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Users reported toolsdb connection failures caused by alertmanager only checking read/write status without attempting writes, a gap left after removing the dedicated write check."
+  }
+ },
+ {
+  "incident": "Incidents/2026-02-23 ml-serve",
+  "report_excerpt": " Two production K8s Machine Learning clusters were updated to version 1.31, that included upgrading the Istio version from 1.15 to 1.24. Istio is being used in those clusters both as Ingress Gateway and mesh sidecar; the latter is basically a transparent proxy that all the model servers deployed use for their ingress and egress traffic. The new Istio version has a stricter validation policy for the \"host\" attribute in the Virtual Service definitions (basically the proxy/route rules for the transparent proxy): if two or more Virtual Services have overlapping values, only one Virtual Service is considered and the other one discarded. The model servers running on those clusters calls services like the MediaWiki API in two ways:\n\n- Explicit reference of the MW API VIP in the code, including the right HTTP Host header. For example, <code>mw-api-ro.discovery.wmnet</code> with Host header <code>en.wikipedia.org</code>.\n\n- Implicit reference to the MW API using high level domains like <code>en.wikipedia.org</code>, without mentioning the MW API VIP at all. This is the \"transparent proxy\" feature that was mentioned before.\n\nThe ML team runs some model servers running with the first configuration, and the others with the second configuration. The motivation is that sometimes it is more convenient to use one rather than the latter, so the team never decided which one was the canonical one to use.\n\nThe affected model servers in this outage were the ones using the transparent proxy config",
+  "candidates": [
+   "none"
+  ],
+  "A": {
+   "trigger": "deploy",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "Istio upgrade to 1.24 introduced stricter Virtual Service validation that discarded overlapping host rules, breaking transparent proxy routing for model servers until a hotfix was deployed."
+  },
+  "B": {
+   "trigger": "maintenance",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "human report",
+   "one_line": "K8s ML clusters upgrade to 1.31 brought Istio 1.24 stricter VirtualService host validation, breaking transparent-proxy MW API calls and causing 5XX errors for many model servers."
+  }
+ },
+ {
+  "incident": "Incidents/2026-05-13 wdqs",
+  "report_excerpt": " \n\n\u2026\n\n Aggressive scrapers started hitting WDQS on 2026-05-07 causing a decreased service availability that impacted [[SLO/WDQS]] (both '''Uptime (availability) percentage''' \u00a0as well as '''Excessive lag percentage).'''\n\nOver the whole period we identified two issues at play:\n\n# Blazegraph was under load and started to timeout for a large population of users (>50% at peak).\n# The streaming-updater-consumer service (responsible for real-time index updates) was throttled by the overloaded Blazegraph, resulting in index UPDATES being rejected (429) and lag increased. This, in return, triggered max lag protection in Wikibase, resulting in wikidata.org requests (edits) getting throttled.\n\n[[File:Screenshot From 2026-05-13 21-49-55.png|alt=WDQS consumer lag|600x600px]]\n\n\nThe incident began in the afternoon (UTC) of 2026-05-07. It was temporarily mitigated, but alerts started firing again overnight.\n\nUpon reviewing the alerts on Friday (2026-05-08), we diagnosed that the entirety of eqiad was lagging and proceeded to depool the  deployment to allow Wikidata changes (WDQS index updates) to propagate. As lag started increasing again, we applied rate limits to actors that were aggressively querying the service and causing timeouts.\n\nDespite the aggressive global edge rate limiting applied on Friday, the outage persisted throughout the weekend. The initial rate-limiting rules were extrapolated from a Turnilo data cube based on a 1-in-128 sample of all incoming web requests across Wikime",
+  "candidates": [
+   "host:wdqs1011",
+   "host:wdqs1012",
+   "host:wdqs1014",
+   "host:wdqs1016"
+  ],
+  "A": {
+   "trigger": "traffic surge",
+   "root_cause_components": [],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Aggressive scrapers overloaded WDQS Blazegraph, causing query timeouts and throttled streaming updates, raising lag and throttling Wikidata edits until requestctl rules applied."
+  },
+  "B": {
+   "trigger": "traffic surge",
+   "root_cause_components": [
+    "host:wdqs1011",
+    "host:wdqs1012",
+    "host:wdqs1014",
+    "host:wdqs1016"
+   ],
+   "triggering_change": null,
+   "detected_by": "automated alert",
+   "one_line": "Aggressive scrapers caused WDQS overload and lag, detected by automated alerts, with specific hosts wdqs1011, wdqs1012, wdqs1014, and wdqs1016 manually depooled due to excessive lag."
+  }
+ }
+]

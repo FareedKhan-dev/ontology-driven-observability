@@ -1,0 +1,66 @@
+{
+ "profile": "FULL",
+ "written": "2026-11-01T03:44+00:00",
+ "verdicts": [
+  {
+   "claim": "H1",
+   "verdict": "SUPPORTED",
+   "evidence": "one query and five lookups return the same changes and owners on 217 of 217 questions with a change to compare"
+  },
+  {
+   "claim": "H2",
+   "verdict": "SUPPORTED",
+   "evidence": "contract kept 100%; identical three times with the contract 90% of 10 (95% interval 60% to 98%); only closed 9, only free 0 (Holm p 0.03)"
+  },
+  {
+   "claim": "H3",
+   "verdict": "SUPPORTED",
+   "evidence": "3,734 junk strings refused; misspelt host caught by the shapes"
+  },
+  {
+   "claim": "H4",
+   "verdict": "NOT SUPPORTED",
+   "evidence": "call graphs: no fan-in above 10 (not testable); membership hub: incident/placebo ratio 1.55 uncapped, 1.55 capped"
+  },
+  {
+   "claim": "H5",
+   "verdict": "SUPPORTED",
+   "evidence": "a graph-reading enricher makes 8 links in planned order, 0 out of order"
+  },
+  {
+   "claim": "H6",
+   "verdict": "INCONCLUSIVE",
+   "evidence": "first: topology 4, timing 2 (Holm p 1.00); 33/146 incidents, 103/707 placebo (Holm p 0.11)"
+  },
+  {
+   "claim": "H7",
+   "verdict": "NOT SUPPORTED",
+   "evidence": "better on 7, worse on 8 (Holm p 1.00)"
+  },
+  {
+   "claim": "H8",
+   "verdict": "INCONCLUSIVE",
+   "evidence": "only with chat 1, only without 0 (Holm p 1.00)"
+  },
+  {
+   "claim": "H9",
+   "verdict": "INCONCLUSIVE",
+   "evidence": "only raw 1, only graph 0 (Holm p 1.00)"
+  },
+  {
+   "claim": "H10",
+   "verdict": "NOT TESTABLE",
+   "evidence": "our specialists report to a reconciler and never read each other's findings"
+  },
+  {
+   "claim": "H11",
+   "verdict": "SUPPORTED",
+   "evidence": "people: cause found a median 62 min after impact; agents: an answer in 14 s live, right or wrong"
+  },
+  {
+   "claim": "H12",
+   "verdict": "INCONCLUSIVE",
+   "evidence": "wrong only without 1, only with 0 (Holm p 1.00)"
+  }
+ ]
+}

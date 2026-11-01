@@ -1,0 +1,12 @@
+{
+ "status": "measured",
+ "when": "2026-10-31 08:53 UTC",
+ "per_call": {
+  "Qwen-Ambassador/Qwen3.8-Flash-Next": 0.2,
+  "Qwen-Ambassador/Qwen3.8-27B": 0.2,
+  "Qwen-Ambassador/Qwen3.8-Max": 0.5,
+  "Qwen-Ambassador/Qwen3.8-Omni-Flash": 0.2,
+  "Qwen-Ambassador/Qwen3.7-Max": 0.5,
+  "Qwen-Ambassador/Qwen3.7-Plus": 0.2
+ }
+}

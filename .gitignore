@@ -1,0 +1,38 @@
+# secrets: API keys and the Wikimedia contact never enter version control
+keys/
+.env
+*.key
+*_api_key.txt
+wikimedia_contact.txt
+
+# data lives outside the repository (DATA_DIR); a local ./data is never committed
+data/
+
+# environments and caches
+.venv/
+.uv_cache/
+.cache/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.ipython/
+
+# outputs of the quick profiles and transient files; the FULL outputs are the record
+artifacts/*_smoke*/
+artifacts/*_smoke*.json
+artifacts/*_medium*/
+artifacts/*_medium*.json
+artifacts/loadtest/
+artifacts/graph/snapshots/smoke/
+*.tmp
+
+# caches built from raw records that hold people's names; a run rebuilds them from public sources
+artifacts/results_full/incident_cards.parquet
+artifacts/results_full/identity_mentions.parquet
+artifacts/results_full/alert_episodes.parquet
+
+# editors and systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

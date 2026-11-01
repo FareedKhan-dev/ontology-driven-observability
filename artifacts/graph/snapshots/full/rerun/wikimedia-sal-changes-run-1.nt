@@ -1,0 +1,737 @@
+<https://kg.example.org/id/wikimedia/change/20240417t032400-1f46d973> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t032400-1f46d973> <https://kg.example.org/correlation#at> "2024-04-17T03:24:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t032400-1f46d973> <https://kg.example.org/correlation#detectedAt> "2024-04-17T03:24:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t032400-1f46d973> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T03> .
+<https://kg.example.org/id/wikimedia/change/20240417t032400-1f46d973> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1196> .
+<https://kg.example.org/id/wikimedia/change/20240417t032400-1f46d973> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1196', diff saved to https://phabricator.wikimedia.org/P60697 and previous config saved to /var/cache/conftool/dbconfig/20240417-032418-eng-78e7c." .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-2767d4b5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-2767d4b5> <https://kg.example.org/correlation#at> "2024-04-17T03:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-2767d4b5> <https://kg.example.org/correlation#detectedAt> "2024-04-17T03:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-2767d4b5> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T03> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-2767d4b5> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1206> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-2767d4b5> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 1 day, 0:00:00 on db1206.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-40593d1b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-40593d1b> <https://kg.example.org/correlation#at> "2024-04-17T03:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-40593d1b> <https://kg.example.org/correlation#detectedAt> "2024-04-17T03:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-40593d1b> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T03> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-40593d1b> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1196> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-40593d1b> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1196 ([[phab:T352010|T352010]])', diff saved to https://phabricator.wikimedia.org/P60698 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-df874c7d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-df874c7d> <https://kg.example.org/correlation#at> "2024-04-17T03:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-df874c7d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T03:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-df874c7d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T03> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-df874c7d> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1206> .
+<https://kg.example.org/id/wikimedia/change/20240417t033900-df874c7d> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1206 ([[phab:T352010|T352010]])', diff saved to https://phabricator.wikimedia.org/P60699 and previous config saved to /var/cache/conftool/dbconfig/20240417-033948-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t043800-8631e970> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t043800-8631e970> <https://kg.example.org/correlation#at> "2024-04-17T04:38:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t043800-8631e970> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:38:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t043800-8631e970> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t043800-8631e970> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1222> .
+<https://kg.example.org/id/wikimedia/change/20240417t043800-8631e970> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1222.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t044000-781cbd20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t044000-781cbd20> <https://kg.example.org/correlation#at> "2024-04-17T04:40:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t044000-781cbd20> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:40:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t044000-781cbd20> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t044000-781cbd20> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1206> .
+<https://kg.example.org/id/wikimedia/change/20240417t044000-781cbd20> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1206 ([[phab:T352010|T352010]])', diff saved to https://phabricator.wikimedia.org/P60700 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t044400-5f5c07ec> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t044400-5f5c07ec> <https://kg.example.org/correlation#at> "2024-04-17T04:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t044400-5f5c07ec> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t044400-5f5c07ec> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t044400-5f5c07ec> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1166> .
+<https://kg.example.org/id/wikimedia/change/20240417t044400-5f5c07ec> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1166.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t044500-76c153aa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t044500-76c153aa> <https://kg.example.org/correlation#at> "2024-04-17T04:45:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t044500-76c153aa> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:45:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t044500-76c153aa> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t044500-76c153aa> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1166> .
+<https://kg.example.org/id/wikimedia/change/20240417t044500-76c153aa> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1166 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60701 and previous config saved to /var/cache/conftool/dbconfig/20240417-044517-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t045100-dc45efea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t045100-dc45efea> <https://kg.example.org/correlation#at> "2024-04-17T04:51:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045100-dc45efea> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:51:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045100-dc45efea> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t045100-dc45efea> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1166> .
+<https://kg.example.org/id/wikimedia/change/20240417t045100-dc45efea> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1166 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60702 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t045300-dbb22b2d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t045300-dbb22b2d> <https://kg.example.org/correlation#at> "2024-04-17T04:53:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045300-dbb22b2d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:53:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045300-dbb22b2d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t045300-dbb22b2d> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t045300-dbb22b2d> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depool db2182', diff saved to https://phabricator.wikimedia.org/P60703 and previous config saved to /var/cache/conftool/dbconfig/20240417-045353-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-52a4e3e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-52a4e3e7> <https://kg.example.org/correlation#at> "2024-04-17T04:55:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-52a4e3e7> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:55:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-52a4e3e7> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-52a4e3e7> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-52a4e3e7> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.reimage for host db2182.codfw.wmnet with OS bookworm" .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-b23a26b9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-b23a26b9> <https://kg.example.org/correlation#at> "2024-04-17T04:55:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-b23a26b9> <https://kg.example.org/correlation#detectedAt> "2024-04-17T04:55:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-b23a26b9> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T04> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-b23a26b9> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1206> .
+<https://kg.example.org/id/wikimedia/change/20240417t045500-b23a26b9> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1206', diff saved to https://phabricator.wikimedia.org/P60704 and previous config saved to /var/cache/conftool/dbconfig/20240417-045522-eng-78e7c." .
+<https://kg.example.org/id/wikimedia/change/20240417t050000-be7aeb61> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t050000-be7aeb61> <https://kg.example.org/correlation#at> "2024-04-17T05:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t050000-be7aeb61> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t050000-be7aeb61> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t050000-be7aeb61> <https://kg.example.org/timeline#message> "dbmaint Upgrade s7 codfw to Bookworm and MariaDB 10.6 [[phab:T362745|T362745]]" .
+<https://kg.example.org/id/wikimedia/change/20240417t050500-a0df861d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Change> .
+<https://kg.example.org/id/wikimedia/change/20240417t050500-a0df861d> <https://kg.example.org/correlation#at> "2024-04-17T05:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t050500-a0df861d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t050500-a0df861d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t050500-a0df861d> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1249> .
+<https://kg.example.org/id/wikimedia/change/20240417t050500-a0df861d> <https://kg.example.org/timeline#message> "Rename machine_vision tables on db1249 eqiad dbmaint s4 [[phab:T362229|T362229]]" .
+<https://kg.example.org/id/wikimedia/change/20240417t050600-f5651942> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t050600-f5651942> <https://kg.example.org/correlation#at> "2024-04-17T05:06:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t050600-f5651942> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:06:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t050600-f5651942> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t050600-f5651942> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1166> .
+<https://kg.example.org/id/wikimedia/change/20240417t050600-f5651942> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1166', diff saved to https://phabricator.wikimedia.org/P60705 and previous config saved to /var/cache/conftool/dbconfig/20240417-050638-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t051000-bb4fe7b0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t051000-bb4fe7b0> <https://kg.example.org/correlation#at> "2024-04-17T05:10:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t051000-bb4fe7b0> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:10:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t051000-bb4fe7b0> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t051000-bb4fe7b0> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1206> .
+<https://kg.example.org/id/wikimedia/change/20240417t051000-bb4fe7b0> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1206', diff saved to https://phabricator.wikimedia.org/P60706 and previous config saved to /var/cache/conftool/dbconfig/20240417-051029-eng-78e7c." .
+<https://kg.example.org/id/wikimedia/change/20240417t051200-5624363e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t051200-5624363e> <https://kg.example.org/correlation#at> "2024-04-17T05:12:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t051200-5624363e> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:12:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t051200-5624363e> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t051200-5624363e> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t051200-5624363e> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 2:00:00 on db2182.codfw.wmnet with reason: host reimage" .
+<https://kg.example.org/id/wikimedia/change/20240417t052100-5394131a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t052100-5394131a> <https://kg.example.org/correlation#at> "2024-04-17T05:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052100-5394131a> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052100-5394131a> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t052100-5394131a> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1166> .
+<https://kg.example.org/id/wikimedia/change/20240417t052100-5394131a> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1166', diff saved to https://phabricator.wikimedia.org/P60707 and previous config saved to /var/cache/conftool/dbconfig/20240417-052145-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-6a7f5186> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-6a7f5186> <https://kg.example.org/correlation#at> "2024-04-17T05:25:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-6a7f5186> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:25:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-6a7f5186> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-6a7f5186> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1206> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-6a7f5186> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1206 ([[phab:T352010|T352010]])', diff saved to https://phabricator.wikimedia.org/P60708 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-bff3857c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-bff3857c> <https://kg.example.org/correlation#at> "2024-04-17T05:25:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-bff3857c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:25:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-bff3857c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-bff3857c> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1207> .
+<https://kg.example.org/id/wikimedia/change/20240417t052500-bff3857c> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 1 day, 0:00:00 on db1207.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t052600-d145b723> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t052600-d145b723> <https://kg.example.org/correlation#at> "2024-04-17T05:26:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052600-d145b723> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:26:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t052600-d145b723> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t052600-d145b723> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1207> .
+<https://kg.example.org/id/wikimedia/change/20240417t052600-d145b723> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1207 ([[phab:T352010|T352010]])', diff saved to https://phabricator.wikimedia.org/P60709 and previous config saved to /var/cache/conftool/dbconfig/20240417-052600-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t053100-e6a31fc0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t053100-e6a31fc0> <https://kg.example.org/correlation#at> "2024-04-17T05:31:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053100-e6a31fc0> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:31:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053100-e6a31fc0> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t053100-e6a31fc0> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t053100-e6a31fc0> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 1%: Repooling', diff saved to https://phabricator.wikimedia.org/P60710 and previous config saved to /var/cache/conftool/dbconfig/20240417-053131-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-2d5f6560> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-2d5f6560> <https://kg.example.org/correlation#at> "2024-04-17T05:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-2d5f6560> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-2d5f6560> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-2d5f6560> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1166> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-2d5f6560> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1166 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60711 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-f82b8000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-f82b8000> <https://kg.example.org/correlation#at> "2024-04-17T05:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-f82b8000> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-f82b8000> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-f82b8000> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1175> .
+<https://kg.example.org/id/wikimedia/change/20240417t053600-f82b8000> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1175.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t053700-c7974483> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t053700-c7974483> <https://kg.example.org/correlation#at> "2024-04-17T05:37:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053700-c7974483> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:37:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t053700-c7974483> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t053700-c7974483> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1175> .
+<https://kg.example.org/id/wikimedia/change/20240417t053700-c7974483> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1175 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60712 and previous config saved to /var/cache/conftool/dbconfig/20240417-053716-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t054300-e1592d75> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t054300-e1592d75> <https://kg.example.org/correlation#at> "2024-04-17T05:43:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t054300-e1592d75> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:43:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t054300-e1592d75> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t054300-e1592d75> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1175> .
+<https://kg.example.org/id/wikimedia/change/20240417t054300-e1592d75> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1175 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60713 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t054600-784ae86d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t054600-784ae86d> <https://kg.example.org/correlation#at> "2024-04-17T05:46:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t054600-784ae86d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:46:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t054600-784ae86d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t054600-784ae86d> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t054600-784ae86d> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 5%: Repooling', diff saved to https://phabricator.wikimedia.org/P60714 and previous config saved to /var/cache/conftool/dbconfig/20240417-054637-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t055800-0fa2f0e9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t055800-0fa2f0e9> <https://kg.example.org/correlation#at> "2024-04-17T05:58:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t055800-0fa2f0e9> <https://kg.example.org/correlation#detectedAt> "2024-04-17T05:58:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t055800-0fa2f0e9> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T05> .
+<https://kg.example.org/id/wikimedia/change/20240417t055800-0fa2f0e9> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1175> .
+<https://kg.example.org/id/wikimedia/change/20240417t055800-0fa2f0e9> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1175', diff saved to https://phabricator.wikimedia.org/P60715 and previous config saved to /var/cache/conftool/dbconfig/20240417-055841-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t060100-99613088> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t060100-99613088> <https://kg.example.org/correlation#at> "2024-04-17T06:01:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t060100-99613088> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:01:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t060100-99613088> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t060100-99613088> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t060100-99613088> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 10%: Repooling', diff saved to https://phabricator.wikimedia.org/P60716 and previous config saved to /var/cache/conftool/dbconfig/20240417-060143-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t061300-ecdb201b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t061300-ecdb201b> <https://kg.example.org/correlation#at> "2024-04-17T06:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t061300-ecdb201b> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t061300-ecdb201b> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t061300-ecdb201b> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1175> .
+<https://kg.example.org/id/wikimedia/change/20240417t061300-ecdb201b> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1175', diff saved to https://phabricator.wikimedia.org/P60717 and previous config saved to /var/cache/conftool/dbconfig/20240417-061349-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t061600-1ee2851f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t061600-1ee2851f> <https://kg.example.org/correlation#at> "2024-04-17T06:16:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t061600-1ee2851f> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:16:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t061600-1ee2851f> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t061600-1ee2851f> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t061600-1ee2851f> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 25%: Repooling', diff saved to https://phabricator.wikimedia.org/P60718 and previous config saved to /var/cache/conftool/dbconfig/20240417-061649-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t062800-0bbfd329> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t062800-0bbfd329> <https://kg.example.org/correlation#at> "2024-04-17T06:28:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t062800-0bbfd329> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:28:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t062800-0bbfd329> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t062800-0bbfd329> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1175> .
+<https://kg.example.org/id/wikimedia/change/20240417t062800-0bbfd329> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1175 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60719 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-3ecb62fa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-3ecb62fa> <https://kg.example.org/correlation#at> "2024-04-17T06:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-3ecb62fa> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-3ecb62fa> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-3ecb62fa> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1189> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-3ecb62fa> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1189.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-e3b8fb9d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-e3b8fb9d> <https://kg.example.org/correlation#at> "2024-04-17T06:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-e3b8fb9d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-e3b8fb9d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-e3b8fb9d> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1189> .
+<https://kg.example.org/id/wikimedia/change/20240417t062900-e3b8fb9d> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1189 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60720 and previous config saved to /var/cache/conftool/dbconfig/20240417-062918-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t063100-75c39125> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t063100-75c39125> <https://kg.example.org/correlation#at> "2024-04-17T06:31:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t063100-75c39125> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:31:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t063100-75c39125> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t063100-75c39125> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t063100-75c39125> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 50%: Repooling', diff saved to https://phabricator.wikimedia.org/P60721 and previous config saved to /var/cache/conftool/dbconfig/20240417-063155-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t063500-a45f6e58> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t063500-a45f6e58> <https://kg.example.org/correlation#at> "2024-04-17T06:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t063500-a45f6e58> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t063500-a45f6e58> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t063500-a45f6e58> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1189> .
+<https://kg.example.org/id/wikimedia/change/20240417t063500-a45f6e58> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1189 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60722 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t064700-9d6566c9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t064700-9d6566c9> <https://kg.example.org/correlation#at> "2024-04-17T06:47:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t064700-9d6566c9> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:47:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t064700-9d6566c9> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t064700-9d6566c9> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t064700-9d6566c9> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 75%: Repooling', diff saved to https://phabricator.wikimedia.org/P60723 and previous config saved to /var/cache/conftool/dbconfig/20240417-064700-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t065000-9517bf83> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t065000-9517bf83> <https://kg.example.org/correlation#at> "2024-04-17T06:50:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t065000-9517bf83> <https://kg.example.org/correlation#detectedAt> "2024-04-17T06:50:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t065000-9517bf83> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T06> .
+<https://kg.example.org/id/wikimedia/change/20240417t065000-9517bf83> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1189> .
+<https://kg.example.org/id/wikimedia/change/20240417t065000-9517bf83> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1189', diff saved to https://phabricator.wikimedia.org/P60724 and previous config saved to /var/cache/conftool/dbconfig/20240417-065044-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t070200-9a11cb89> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t070200-9a11cb89> <https://kg.example.org/correlation#at> "2024-04-17T07:02:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t070200-9a11cb89> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:02:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t070200-9a11cb89> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t070200-9a11cb89> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2182> .
+<https://kg.example.org/id/wikimedia/change/20240417t070200-9a11cb89> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2182 (re)pooling @ 100%: Repooling', diff saved to https://phabricator.wikimedia.org/P60725 and previous config saved to /var/cache/conftool/dbconfig/20240417-070206-root.jso" .
+<https://kg.example.org/id/wikimedia/change/20240417t070500-660dcdc8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t070500-660dcdc8> <https://kg.example.org/correlation#at> "2024-04-17T07:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t070500-660dcdc8> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t070500-660dcdc8> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t070500-660dcdc8> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1189> .
+<https://kg.example.org/id/wikimedia/change/20240417t070500-660dcdc8> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1189', diff saved to https://phabricator.wikimedia.org/P60726 and previous config saved to /var/cache/conftool/dbconfig/20240417-070552-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-4418dd56> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-4418dd56> <https://kg.example.org/correlation#at> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-4418dd56> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-4418dd56> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-4418dd56> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1198> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-4418dd56> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1198.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-879838e6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-879838e6> <https://kg.example.org/correlation#at> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-879838e6> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-879838e6> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-879838e6> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1198> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-879838e6> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1198 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60729 and previous config saved to /var/cache/conftool/dbconfig/20240417-072122-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-c667ab1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-c667ab1f> <https://kg.example.org/correlation#at> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-c667ab1f> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-c667ab1f> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-c667ab1f> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-c667ab1f> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depool db2150', diff saved to https://phabricator.wikimedia.org/P60728 and previous config saved to /var/cache/conftool/dbconfig/20240417-072115-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-f3ca001b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-f3ca001b> <https://kg.example.org/correlation#at> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-f3ca001b> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:21:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-f3ca001b> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-f3ca001b> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1189> .
+<https://kg.example.org/id/wikimedia/change/20240417t072100-f3ca001b> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1189 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60727 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t072200-beaa216e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t072200-beaa216e> <https://kg.example.org/correlation#at> "2024-04-17T07:22:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072200-beaa216e> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:22:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072200-beaa216e> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072200-beaa216e> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t072200-beaa216e> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.reimage for host db2150.codfw.wmnet with OS bookworm" .
+<https://kg.example.org/id/wikimedia/change/20240417t072600-feb4ef2c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t072600-feb4ef2c> <https://kg.example.org/correlation#at> "2024-04-17T07:26:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072600-feb4ef2c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:26:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072600-feb4ef2c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072600-feb4ef2c> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1240> .
+<https://kg.example.org/id/wikimedia/change/20240417t072600-feb4ef2c> <https://kg.example.org/timeline#message> "restart db1240 database for mariadb upgrade" .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-cc25f7b5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#ConfigChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-cc25f7b5> <https://kg.example.org/correlation#at> "2024-04-17T07:27:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-cc25f7b5> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:27:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-cc25f7b5> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-cc25f7b5> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2214> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-cc25f7b5> <https://kg.example.org/timeline#message> "START - Cookbook sre.puppet.migrate-host for host db2214.codfw.wmnet" .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-dec9752b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-dec9752b> <https://kg.example.org/correlation#at> "2024-04-17T07:27:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-dec9752b> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:27:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-dec9752b> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-dec9752b> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1198> .
+<https://kg.example.org/id/wikimedia/change/20240417t072700-dec9752b> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1198 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60730 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t073800-80f72664> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t073800-80f72664> <https://kg.example.org/correlation#at> "2024-04-17T07:38:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073800-80f72664> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:38:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073800-80f72664> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t073800-80f72664> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1216> .
+<https://kg.example.org/id/wikimedia/change/20240417t073800-80f72664> <https://kg.example.org/timeline#message> "restart db1216 database for mariadb upgrade" .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-98170a0a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-98170a0a> <https://kg.example.org/correlation#at> "2024-04-17T07:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-98170a0a> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-98170a0a> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-98170a0a> <https://kg.example.org/timeline#message> "Started deploy [analytics/refinery@c4e197f]: Regular analytics weekly train [analytics/refinery@c4e197fa]" .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-c17b2929> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-c17b2929> <https://kg.example.org/correlation#at> "2024-04-17T07:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-c17b2929> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-c17b2929> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-c17b2929> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-c17b2929> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 2:00:00 on db2150.codfw.wmnet with reason: host reimage" .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-dd7f5d65> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Change> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-dd7f5d65> <https://kg.example.org/correlation#at> "2024-04-17T07:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-dd7f5d65> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:39:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-dd7f5d65> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t073900-dd7f5d65> <https://kg.example.org/timeline#message> "analytics/refinery deploy begin (added source jars 0.2.35)" .
+<https://kg.example.org/id/wikimedia/change/20240417t074000-beee8138> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#ConfigChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t074000-beee8138> <https://kg.example.org/correlation#at> "2024-04-17T07:40:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t074000-beee8138> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:40:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t074000-beee8138> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t074000-beee8138> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1173> .
+<https://kg.example.org/id/wikimedia/change/20240417t074000-beee8138> <https://kg.example.org/timeline#message> "START - Cookbook sre.puppet.migrate-host for host db1173.eqiad.wmnet" .
+<https://kg.example.org/id/wikimedia/change/20240417t074200-8bbbba7a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t074200-8bbbba7a> <https://kg.example.org/correlation#at> "2024-04-17T07:42:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t074200-8bbbba7a> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:42:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t074200-8bbbba7a> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t074200-8bbbba7a> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1198> .
+<https://kg.example.org/id/wikimedia/change/20240417t074200-8bbbba7a> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1198', diff saved to https://phabricator.wikimedia.org/P60731 and previous config saved to /var/cache/conftool/dbconfig/20240417-074241-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t075700-0ec64fdc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t075700-0ec64fdc> <https://kg.example.org/correlation#at> "2024-04-17T07:57:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t075700-0ec64fdc> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:57:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t075700-0ec64fdc> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t075700-0ec64fdc> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1198> .
+<https://kg.example.org/id/wikimedia/change/20240417t075700-0ec64fdc> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1198', diff saved to https://phabricator.wikimedia.org/P60732 and previous config saved to /var/cache/conftool/dbconfig/20240417-075748-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t075800-252d3100> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t075800-252d3100> <https://kg.example.org/correlation#at> "2024-04-17T07:58:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t075800-252d3100> <https://kg.example.org/correlation#detectedAt> "2024-04-17T07:58:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t075800-252d3100> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T07> .
+<https://kg.example.org/id/wikimedia/change/20240417t075800-252d3100> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t075800-252d3100> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 1%: Repooling', diff saved to https://phabricator.wikimedia.org/P60733 and previous config saved to /var/cache/conftool/dbconfig/20240417-075850-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t080000-bc67a968> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t080000-bc67a968> <https://kg.example.org/correlation#at> "2024-04-17T08:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t080000-bc67a968> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t080000-bc67a968> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t080000-bc67a968> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/kubestage2002> .
+<https://kg.example.org/id/wikimedia/change/20240417t080000-bc67a968> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.reboot-single for host kubestage2002.codfw.wmnet" .
+<https://kg.example.org/id/wikimedia/change/20240417t081200-702eaf9c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t081200-702eaf9c> <https://kg.example.org/correlation#at> "2024-04-17T08:12:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081200-702eaf9c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:12:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081200-702eaf9c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081200-702eaf9c> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1198> .
+<https://kg.example.org/id/wikimedia/change/20240417t081200-702eaf9c> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1198 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60734 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-446c637d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-446c637d> <https://kg.example.org/correlation#at> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-446c637d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-446c637d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-446c637d> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1154> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-446c637d> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 12:00:00 on clouddb[1013,1017,1021].eqiad.wmnet,db1154.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-59c048eb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-59c048eb> <https://kg.example.org/correlation#at> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-59c048eb> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-59c048eb> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-59c048eb> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1212> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-59c048eb> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1212 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60735 and previous config saved to /var/cache/conftool/dbconfig/20240417-081326-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-77849089> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-77849089> <https://kg.example.org/correlation#at> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-77849089> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-77849089> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-77849089> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-77849089> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 5%: Repooling', diff saved to https://phabricator.wikimedia.org/P60736 and previous config saved to /var/cache/conftool/dbconfig/20240417-081356-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-c12d35d0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-c12d35d0> <https://kg.example.org/correlation#at> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-c12d35d0> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-c12d35d0> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-c12d35d0> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1212> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-c12d35d0> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1212.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-f2120cbe> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-f2120cbe> <https://kg.example.org/correlation#at> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-f2120cbe> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-f2120cbe> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081300-f2120cbe> <https://kg.example.org/timeline#message> "Started deploy [analytics/refinery@c4e197f] (thin): Regular analytics weekly train THIN [analytics/refinery@c4e197fa]" .
+<https://kg.example.org/id/wikimedia/change/20240417t081900-bcef6bac> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t081900-bcef6bac> <https://kg.example.org/correlation#at> "2024-04-17T08:19:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081900-bcef6bac> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:19:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t081900-bcef6bac> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t081900-bcef6bac> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1212> .
+<https://kg.example.org/id/wikimedia/change/20240417t081900-bcef6bac> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1212 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60737 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t082400-ccde64b1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t082400-ccde64b1> <https://kg.example.org/correlation#at> "2024-04-17T08:24:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t082400-ccde64b1> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:24:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t082400-ccde64b1> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t082400-ccde64b1> <https://kg.example.org/timeline#message> "Started deploy [analytics/refinery@c4e197f] (hadoop-test): Regular analytics weekly train TEST [analytics/refinery@c4e197fa]" .
+<https://kg.example.org/id/wikimedia/change/20240417t082900-f5ecbc6a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t082900-f5ecbc6a> <https://kg.example.org/correlation#at> "2024-04-17T08:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t082900-f5ecbc6a> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t082900-f5ecbc6a> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t082900-f5ecbc6a> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t082900-f5ecbc6a> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 10%: Repooling', diff saved to https://phabricator.wikimedia.org/P60738 and previous config saved to /var/cache/conftool/dbconfig/20240417-082901-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t083500-c85b1fbd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t083500-c85b1fbd> <https://kg.example.org/correlation#at> "2024-04-17T08:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t083500-c85b1fbd> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t083500-c85b1fbd> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t083500-c85b1fbd> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1212> .
+<https://kg.example.org/id/wikimedia/change/20240417t083500-c85b1fbd> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1212', diff saved to https://phabricator.wikimedia.org/P60739 and previous config saved to /var/cache/conftool/dbconfig/20240417-083501-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t084000-4c5272ba> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t084000-4c5272ba> <https://kg.example.org/correlation#at> "2024-04-17T08:40:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084000-4c5272ba> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:40:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084000-4c5272ba> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t084000-4c5272ba> <https://kg.example.org/timeline#message> "Deployed refinery using scap, then deployed onto hdfs" .
+<https://kg.example.org/id/wikimedia/change/20240417t084100-7bb3cc3d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t084100-7bb3cc3d> <https://kg.example.org/correlation#at> "2024-04-17T08:41:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084100-7bb3cc3d> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:41:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084100-7bb3cc3d> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t084100-7bb3cc3d> <https://kg.example.org/timeline#message> "Started scap: Backport for [[gerrit:1019267{{!}}logging: pluralize $wmgDefaultMonologHandler (T238838)]]" .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-306ca823> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Change> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-306ca823> <https://kg.example.org/correlation#at> "2024-04-17T08:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-306ca823> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-306ca823> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-306ca823> <https://kg.example.org/timeline#message> "eng-c4323: Continuing with sync" .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-5ada1d0c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-5ada1d0c> <https://kg.example.org/correlation#at> "2024-04-17T08:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-5ada1d0c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-5ada1d0c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-5ada1d0c> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-5ada1d0c> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 25%: Repooling', diff saved to https://phabricator.wikimedia.org/P60741 and previous config saved to /var/cache/conftool/dbconfig/20240417-084407-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-af9816e7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-af9816e7> <https://kg.example.org/correlation#at> "2024-04-17T08:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-af9816e7> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-af9816e7> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t084400-af9816e7> <https://kg.example.org/timeline#message> "eng-c4323: Backport for [[gerrit:1019267{{!}}logging: pluralize $wmgDefaultMonologHandler (T238838)]] synced to the testservers (https://wikitech.wikimedia.org/wiki/Mwdebug)" .
+<https://kg.example.org/id/wikimedia/change/20240417t085000-e80a34d7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t085000-e80a34d7> <https://kg.example.org/correlation#at> "2024-04-17T08:50:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t085000-e80a34d7> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:50:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t085000-e80a34d7> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t085000-e80a34d7> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1212> .
+<https://kg.example.org/id/wikimedia/change/20240417t085000-e80a34d7> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1212', diff saved to https://phabricator.wikimedia.org/P60742 and previous config saved to /var/cache/conftool/dbconfig/20240417-085009-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t085900-a1be0612> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t085900-a1be0612> <https://kg.example.org/correlation#at> "2024-04-17T08:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t085900-a1be0612> <https://kg.example.org/correlation#detectedAt> "2024-04-17T08:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t085900-a1be0612> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T08> .
+<https://kg.example.org/id/wikimedia/change/20240417t085900-a1be0612> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t085900-a1be0612> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 50%: Repooling', diff saved to https://phabricator.wikimedia.org/P60743 and previous config saved to /var/cache/conftool/dbconfig/20240417-085912-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t090300-5ea62371> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t090300-5ea62371> <https://kg.example.org/correlation#at> "2024-04-17T09:03:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090300-5ea62371> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:03:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090300-5ea62371> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t090300-5ea62371> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/mw-api-int: apply" .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-31b264cb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-31b264cb> <https://kg.example.org/correlation#at> "2024-04-17T09:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-31b264cb> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-31b264cb> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-31b264cb> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1212> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-31b264cb> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1212 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60744 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-a6627587> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-a6627587> <https://kg.example.org/correlation#at> "2024-04-17T09:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-a6627587> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-a6627587> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-a6627587> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1223> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-a6627587> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db1223 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60745 and previous config saved to /var/cache/conftool/dbconfig/20240417-090539-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-e8a6c443> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-e8a6c443> <https://kg.example.org/correlation#at> "2024-04-17T09:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-e8a6c443> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-e8a6c443> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-e8a6c443> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1223> .
+<https://kg.example.org/id/wikimedia/change/20240417t090500-e8a6c443> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1223.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t090800-6714e0df> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t090800-6714e0df> <https://kg.example.org/correlation#at> "2024-04-17T09:08:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090800-6714e0df> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:08:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t090800-6714e0df> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t090800-6714e0df> <https://kg.example.org/timeline#message> "Started scap: Switch mediawiki in eqiad to use node-local mcrouter ds - [[phab:T346690|T346690]]" .
+<https://kg.example.org/id/wikimedia/change/20240417t091200-f6308d53> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t091200-f6308d53> <https://kg.example.org/correlation#at> "2024-04-17T09:12:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t091200-f6308d53> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:12:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t091200-f6308d53> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t091200-f6308d53> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1223> .
+<https://kg.example.org/id/wikimedia/change/20240417t091200-f6308d53> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1223 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60746 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t091400-9a52a208> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t091400-9a52a208> <https://kg.example.org/correlation#at> "2024-04-17T09:14:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t091400-9a52a208> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:14:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t091400-9a52a208> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t091400-9a52a208> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t091400-9a52a208> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 75%: Repooling', diff saved to https://phabricator.wikimedia.org/P60747 and previous config saved to /var/cache/conftool/dbconfig/20240417-091418-root.json" .
+<https://kg.example.org/id/wikimedia/change/20240417t092700-1548f8cc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t092700-1548f8cc> <https://kg.example.org/correlation#at> "2024-04-17T09:27:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t092700-1548f8cc> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:27:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t092700-1548f8cc> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t092700-1548f8cc> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1223> .
+<https://kg.example.org/id/wikimedia/change/20240417t092700-1548f8cc> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1223', diff saved to https://phabricator.wikimedia.org/P60748 and previous config saved to /var/cache/conftool/dbconfig/20240417-092714-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t092900-c363d7e6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t092900-c363d7e6> <https://kg.example.org/correlation#at> "2024-04-17T09:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t092900-c363d7e6> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:29:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t092900-c363d7e6> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t092900-c363d7e6> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2150> .
+<https://kg.example.org/id/wikimedia/change/20240417t092900-c363d7e6> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'db2150 (re)pooling @ 100%: Repooling', diff saved to https://phabricator.wikimedia.org/P60749 and previous config saved to /var/cache/conftool/dbconfig/20240417-092923-root.jso" .
+<https://kg.example.org/id/wikimedia/change/20240417t093100-c32e2338> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t093100-c32e2338> <https://kg.example.org/correlation#at> "2024-04-17T09:31:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t093100-c32e2338> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:31:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t093100-c32e2338> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t093100-c32e2338> <https://kg.example.org/timeline#message> "scap failed: KeyError 'production' (duration: 22m 21s)" .
+<https://kg.example.org/id/wikimedia/change/20240417t094200-07f6d5ed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t094200-07f6d5ed> <https://kg.example.org/correlation#at> "2024-04-17T09:42:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094200-07f6d5ed> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:42:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094200-07f6d5ed> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t094200-07f6d5ed> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1223> .
+<https://kg.example.org/id/wikimedia/change/20240417t094200-07f6d5ed> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1223', diff saved to https://phabricator.wikimedia.org/P60750 and previous config saved to /var/cache/conftool/dbconfig/20240417-094223-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-4ff5356f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-4ff5356f> <https://kg.example.org/correlation#at> "2024-04-17T09:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-4ff5356f> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-4ff5356f> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-4ff5356f> <https://kg.example.org/timeline#message> "conftool action : set/pooled=false; selector: dnsdisc=mw-api-int-ro,name=eqiad" .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-58a7d20a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-58a7d20a> <https://kg.example.org/correlation#at> "2024-04-17T09:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-58a7d20a> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-58a7d20a> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-58a7d20a> <https://kg.example.org/timeline#message> "conftool action : set/pooled=false; selector: dnsdisc=mw-api-ext-ro,name=eqiad" .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-d892e69c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-d892e69c> <https://kg.example.org/correlation#at> "2024-04-17T09:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-d892e69c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-d892e69c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t094400-d892e69c> <https://kg.example.org/timeline#message> "conftool action : set/pooled=false; selector: dnsdisc=mw-web-ro,name=eqiad" .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-07e5bd25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-07e5bd25> <https://kg.example.org/correlation#at> "2024-04-17T09:57:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-07e5bd25> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:57:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-07e5bd25> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-07e5bd25> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1240> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-07e5bd25> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db1240.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-5aeb6106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-5aeb6106> <https://kg.example.org/correlation#at> "2024-04-17T09:57:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-5aeb6106> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:57:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-5aeb6106> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-5aeb6106> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db1223> .
+<https://kg.example.org/id/wikimedia/change/20240417t095700-5aeb6106> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db1223 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60753 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t095900-1ec715dd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Change> .
+<https://kg.example.org/id/wikimedia/change/20240417t095900-1ec715dd> <https://kg.example.org/correlation#at> "2024-04-17T09:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t095900-1ec715dd> <https://kg.example.org/correlation#detectedAt> "2024-04-17T09:59:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t095900-1ec715dd> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T09> .
+<https://kg.example.org/id/wikimedia/change/20240417t095900-1ec715dd> <https://kg.example.org/timeline#message> "manually bump coredns in codfw to 6" .
+<https://kg.example.org/id/wikimedia/change/20240417t100000-fcf90b7e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Change> .
+<https://kg.example.org/id/wikimedia/change/20240417t100000-fcf90b7e> <https://kg.example.org/correlation#at> "2024-04-17T10:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t100000-fcf90b7e> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t100000-fcf90b7e> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t100000-fcf90b7e> <https://kg.example.org/timeline#message> "manually bump coredns in eqiad to 6" .
+<https://kg.example.org/id/wikimedia/change/20240417t100600-66da8ebf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t100600-66da8ebf> <https://kg.example.org/correlation#at> "2024-04-17T10:06:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t100600-66da8ebf> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:06:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t100600-66da8ebf> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t100600-66da8ebf> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/dbstore1007> .
+<https://kg.example.org/id/wikimedia/change/20240417t100600-66da8ebf> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on dbstore1007.eqiad.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t100800-6b008801> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t100800-6b008801> <https://kg.example.org/correlation#at> "2024-04-17T10:08:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t100800-6b008801> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:08:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t100800-6b008801> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t100800-6b008801> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/wikifeeds: sync" .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-7f0f48e9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-7f0f48e9> <https://kg.example.org/correlation#at> "2024-04-17T10:14:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-7f0f48e9> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:14:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-7f0f48e9> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-7f0f48e9> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2105> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-7f0f48e9> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Depooling db2105 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60755 and previous config saved to /var/cache/conftool/dbconfig/20240417-101446-e" .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-e7e31578> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Maintenance> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-e7e31578> <https://kg.example.org/correlation#at> "2024-04-17T10:14:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-e7e31578> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:14:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-e7e31578> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-e7e31578> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2105> .
+<https://kg.example.org/id/wikimedia/change/20240417t101400-e7e31578> <https://kg.example.org/timeline#message> "START - Cookbook sre.hosts.downtime for 6:00:00 on db2105.codfw.wmnet with reason: Maintenance" .
+<https://kg.example.org/id/wikimedia/change/20240417t102200-98342683> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#ConfigChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t102200-98342683> <https://kg.example.org/correlation#at> "2024-04-17T10:22:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t102200-98342683> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:22:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t102200-98342683> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t102200-98342683> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/es2028> .
+<https://kg.example.org/id/wikimedia/change/20240417t102200-98342683> <https://kg.example.org/timeline#message> "START - Cookbook sre.puppet.migrate-host for host es2028.codfw.wmnet" .
+<https://kg.example.org/id/wikimedia/change/20240417t103300-889d22e8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103300-889d22e8> <https://kg.example.org/correlation#at> "2024-04-17T10:33:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103300-889d22e8> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:33:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103300-889d22e8> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103300-889d22e8> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/mw-api-ext: apply" .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-2e38064c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-2e38064c> <https://kg.example.org/correlation#at> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-2e38064c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-2e38064c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-2e38064c> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/admin 'apply'." .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-92c57209> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#ConfigChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-92c57209> <https://kg.example.org/correlation#at> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-92c57209> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-92c57209> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-92c57209> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/es1027> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-92c57209> <https://kg.example.org/timeline#message> "START - Cookbook sre.puppet.migrate-host for host es1027.eqiad.wmnet" .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f41ce65c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Change> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f41ce65c> <https://kg.example.org/correlation#at> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f41ce65c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f41ce65c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f41ce65c> <https://kg.example.org/timeline#message> "apply the coredns patches for bumping instances from 4 to 6. They are noop, I am applying them to update helm's state." .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f8353156> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f8353156> <https://kg.example.org/correlation#at> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f8353156> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:34:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f8353156> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f8353156> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2105> .
+<https://kg.example.org/id/wikimedia/change/20240417t103400-f8353156> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db2105 ([[phab:T361627|T361627]])', diff saved to https://phabricator.wikimedia.org/P60756 and previous config saved to /var/cache/conftool/dbconfig" .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-17cdabd4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-17cdabd4> <https://kg.example.org/correlation#at> "2024-04-17T10:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-17cdabd4> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-17cdabd4> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-17cdabd4> <https://kg.example.org/timeline#message> "helmfile [codfw] START helmfile.d/admin 'apply'." .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-5ea62371> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-5ea62371> <https://kg.example.org/correlation#at> "2024-04-17T10:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-5ea62371> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:35:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-5ea62371> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103500-5ea62371> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/mw-api-int: apply" .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1c5c4639> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1c5c4639> <https://kg.example.org/correlation#at> "2024-04-17T10:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1c5c4639> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1c5c4639> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1c5c4639> <https://kg.example.org/timeline#message> "helmfile [eqiad] [canary] START helmfile.d/services/mw-jobrunner : sync" .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1db9fd3c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1db9fd3c> <https://kg.example.org/correlation#at> "2024-04-17T10:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1db9fd3c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1db9fd3c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-1db9fd3c> <https://kg.example.org/timeline#message> "helmfile [eqiad] [main] START helmfile.d/services/mw-jobrunner : sync" .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-eab28118> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-eab28118> <https://kg.example.org/correlation#at> "2024-04-17T10:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-eab28118> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:36:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-eab28118> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103600-eab28118> <https://kg.example.org/timeline#message> "helmfile [eqiad] [canary] DONE helmfile.d/services/mw-jobrunner : sync" .
+<https://kg.example.org/id/wikimedia/change/20240417t103700-2b4cc043> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103700-2b4cc043> <https://kg.example.org/correlation#at> "2024-04-17T10:37:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103700-2b4cc043> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:37:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103700-2b4cc043> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103700-2b4cc043> <https://kg.example.org/timeline#message> "helmfile [eqiad] [main] DONE helmfile.d/services/mw-jobrunner : sync" .
+<https://kg.example.org/id/wikimedia/change/20240417t103800-506a7a50> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t103800-506a7a50> <https://kg.example.org/correlation#at> "2024-04-17T10:38:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103800-506a7a50> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:38:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t103800-506a7a50> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t103800-506a7a50> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/mw-parsoid: apply" .
+<https://kg.example.org/id/wikimedia/change/20240417t104100-c85999fb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t104100-c85999fb> <https://kg.example.org/correlation#at> "2024-04-17T10:41:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104100-c85999fb> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:41:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104100-c85999fb> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t104100-c85999fb> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/mw-web: apply" .
+<https://kg.example.org/id/wikimedia/change/20240417t104200-83fb4654> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t104200-83fb4654> <https://kg.example.org/correlation#at> "2024-04-17T10:42:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104200-83fb4654> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:42:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104200-83fb4654> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t104200-83fb4654> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/services/mw-wikifunctions: apply" .
+<https://kg.example.org/id/wikimedia/change/20240417t104400-212a24fc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t104400-212a24fc> <https://kg.example.org/correlation#at> "2024-04-17T10:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104400-212a24fc> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:44:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104400-212a24fc> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t104400-212a24fc> <https://kg.example.org/timeline#message> "conftool action : set/pooled=true; selector: dnsdisc=mw-api-int-ro,name=eqiad" .
+<https://kg.example.org/id/wikimedia/change/20240417t104500-2f63f673> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t104500-2f63f673> <https://kg.example.org/correlation#at> "2024-04-17T10:45:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104500-2f63f673> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:45:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104500-2f63f673> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t104500-2f63f673> <https://kg.example.org/timeline#message> "pool eqiad back for mw-web-ro,  mw-api-int-ro and mw-api-ext-ro" .
+<https://kg.example.org/id/wikimedia/change/20240417t104600-3610bea8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t104600-3610bea8> <https://kg.example.org/correlation#at> "2024-04-17T10:46:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104600-3610bea8> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:46:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t104600-3610bea8> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t104600-3610bea8> <https://kg.example.org/timeline#message> "conftool action : set/pooled=true; selector: dnsdisc=mw-api-ext-ro,name=eqiad" .
+<https://kg.example.org/id/wikimedia/change/20240417t105000-a0cdfb88> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t105000-a0cdfb88> <https://kg.example.org/correlation#at> "2024-04-17T10:50:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105000-a0cdfb88> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:50:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105000-a0cdfb88> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t105000-a0cdfb88> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2105> .
+<https://kg.example.org/id/wikimedia/change/20240417t105000-a0cdfb88> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db2105', diff saved to https://phabricator.wikimedia.org/P60757 and previous config saved to /var/cache/conftool/dbconfig/20240417-105002-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-2e38064c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-2e38064c> <https://kg.example.org/correlation#at> "2024-04-17T10:53:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-2e38064c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:53:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-2e38064c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-2e38064c> <https://kg.example.org/timeline#message> "helmfile [eqiad] START helmfile.d/admin 'apply'." .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-e8b9f92c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-e8b9f92c> <https://kg.example.org/correlation#at> "2024-04-17T10:53:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-e8b9f92c> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:53:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-e8b9f92c> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t105300-e8b9f92c> <https://kg.example.org/timeline#message> "conftool action : set/pooled=true; selector: dnsdisc=mw-web-ro,name=eqiad" .
+<https://kg.example.org/id/wikimedia/change/20240417t105400-17cdabd4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t105400-17cdabd4> <https://kg.example.org/correlation#at> "2024-04-17T10:54:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105400-17cdabd4> <https://kg.example.org/correlation#detectedAt> "2024-04-17T10:54:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t105400-17cdabd4> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T10> .
+<https://kg.example.org/id/wikimedia/change/20240417t105400-17cdabd4> <https://kg.example.org/timeline#message> "helmfile [codfw] START helmfile.d/admin 'apply'." .
+<https://kg.example.org/id/wikimedia/change/20240417t110500-35913901> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#CapacityChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t110500-35913901> <https://kg.example.org/correlation#at> "2024-04-17T11:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t110500-35913901> <https://kg.example.org/correlation#detectedAt> "2024-04-17T11:05:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t110500-35913901> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T11> .
+<https://kg.example.org/id/wikimedia/change/20240417t110500-35913901> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/db2105> .
+<https://kg.example.org/id/wikimedia/change/20240417t110500-35913901> <https://kg.example.org/timeline#message> "dbctl commit (dc=all): 'Repooling after maintenance db2105', diff saved to https://phabricator.wikimedia.org/P60758 and previous config saved to /var/cache/conftool/dbconfig/20240417-110510-eng-25eb8." .
+<https://kg.example.org/id/wikimedia/change/20240417t110600-d48cfcef> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#ConfigChange> .
+<https://kg.example.org/id/wikimedia/change/20240417t110600-d48cfcef> <https://kg.example.org/correlation#at> "2024-04-17T11:06:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t110600-d48cfcef> <https://kg.example.org/correlation#detectedAt> "2024-04-17T11:06:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t110600-d48cfcef> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T11> .
+<https://kg.example.org/id/wikimedia/change/20240417t110600-d48cfcef> <https://kg.example.org/correlation#on> <https://kg.example.org/id/wikimedia/host/es2030> .
+<https://kg.example.org/id/wikimedia/change/20240417t110600-d48cfcef> <https://kg.example.org/timeline#message> "START - Cookbook sre.puppet.migrate-host for host es2030.codfw.wmnet" .
+<https://kg.example.org/id/wikimedia/change/20240417t111300-7a074a1f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/timeline#Deployment> .
+<https://kg.example.org/id/wikimedia/change/20240417t111300-7a074a1f> <https://kg.example.org/correlation#at> "2024-04-17T11:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t111300-7a074a1f> <https://kg.example.org/correlation#detectedAt> "2024-04-17T11:13:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://kg.example.org/id/wikimedia/change/20240417t111300-7a074a1f> <https://kg.example.org/correlation#inHour> <https://kg.example.org/id/hour/2024-04-17T11> .
+<https://kg.example.org/id/wikimedia/change/20240417t111300-7a074a1f> <https://kg.example.org/timeline#message> "Started scap: NoOp" .
+<https://kg.example.org/id/wikimedia/host/db1154> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1154> <https://kg.example.org/ops#name> "db1154" .
+<https://kg.example.org/id/wikimedia/host/db1166> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1166> <https://kg.example.org/ops#name> "db1166" .
+<https://kg.example.org/id/wikimedia/host/db1173> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1173> <https://kg.example.org/ops#name> "db1173" .
+<https://kg.example.org/id/wikimedia/host/db1175> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1175> <https://kg.example.org/ops#name> "db1175" .
+<https://kg.example.org/id/wikimedia/host/db1189> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1189> <https://kg.example.org/ops#name> "db1189" .
+<https://kg.example.org/id/wikimedia/host/db1196> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1196> <https://kg.example.org/ops#name> "db1196" .
+<https://kg.example.org/id/wikimedia/host/db1198> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1198> <https://kg.example.org/ops#name> "db1198" .
+<https://kg.example.org/id/wikimedia/host/db1206> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1206> <https://kg.example.org/ops#name> "db1206" .
+<https://kg.example.org/id/wikimedia/host/db1207> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1207> <https://kg.example.org/ops#name> "db1207" .
+<https://kg.example.org/id/wikimedia/host/db1212> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1212> <https://kg.example.org/ops#name> "db1212" .
+<https://kg.example.org/id/wikimedia/host/db1216> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1216> <https://kg.example.org/ops#name> "db1216" .
+<https://kg.example.org/id/wikimedia/host/db1222> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1222> <https://kg.example.org/ops#name> "db1222" .
+<https://kg.example.org/id/wikimedia/host/db1223> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1223> <https://kg.example.org/ops#name> "db1223" .
+<https://kg.example.org/id/wikimedia/host/db1240> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1240> <https://kg.example.org/ops#name> "db1240" .
+<https://kg.example.org/id/wikimedia/host/db1249> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db1249> <https://kg.example.org/ops#name> "db1249" .
+<https://kg.example.org/id/wikimedia/host/db2105> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db2105> <https://kg.example.org/ops#name> "db2105" .
+<https://kg.example.org/id/wikimedia/host/db2150> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db2150> <https://kg.example.org/ops#name> "db2150" .
+<https://kg.example.org/id/wikimedia/host/db2182> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db2182> <https://kg.example.org/ops#name> "db2182" .
+<https://kg.example.org/id/wikimedia/host/db2214> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/db2214> <https://kg.example.org/ops#name> "db2214" .
+<https://kg.example.org/id/wikimedia/host/dbstore1007> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/dbstore1007> <https://kg.example.org/ops#name> "dbstore1007" .
+<https://kg.example.org/id/wikimedia/host/es1027> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/es1027> <https://kg.example.org/ops#name> "es1027" .
+<https://kg.example.org/id/wikimedia/host/es2028> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/es2028> <https://kg.example.org/ops#name> "es2028" .
+<https://kg.example.org/id/wikimedia/host/es2030> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/es2030> <https://kg.example.org/ops#name> "es2030" .
+<https://kg.example.org/id/wikimedia/host/kubestage2002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://kg.example.org/ops#Host> .
+<https://kg.example.org/id/wikimedia/host/kubestage2002> <https://kg.example.org/ops#name> "kubestage2002" .

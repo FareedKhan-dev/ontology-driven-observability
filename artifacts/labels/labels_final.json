@@ -1,0 +1,1379 @@
+[
+ {
+  "incident": "Incidents/2021-07-16 asw-a2-codfw network",
+  "how": "two adjudicators agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Switch asw-a2-codfw became unresponsive, taking down rack A2 hosts and LVS row A links; restrictive depool thresholds caused Restbase/mobileapps/cxserver errors for ~1 hour."
+ },
+ {
+  "incident": "Incidents/2021-07-26 ruwikinews DynamicPageList",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Creation of a ruwikinews category linked from 180k pages triggered reparse jobs running slow DynamicPageList queries, overloading s3 databases and taking down all wikis."
+ },
+ {
+  "incident": "Incidents/2021-09-01 partial parsoid outage",
+  "how": "both readers agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Suspected php-opcache corruption on parse2007 caused fatal errors for ~10% of Parsoid parse/save requests for 9 hours until php-fpm restart."
+ },
+ {
+  "incident": "Incidents/2021-09-06 Wikifeeds",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:wikifeeds"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "End-user traffic to Wikifeeds quadrupled, throttling its tls-proxy and causing ~1% 503/504 errors for three days until a pod restart."
+ },
+ {
+  "incident": "Incidents/2021-09-12 Esams upload",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:upload"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Hotlinked large image caused traffic surge to one esams ATS backend; Varnish frontends exhausted work threads, causing 20 minutes of upload media errors."
+ },
+ {
+  "incident": "Incidents/2021-10-22 eqiad return path timeouts",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Patching a new cable to the Equinix IX ports in eqiad caused return-path routing issues, making Wikimedia sites unreachable for some users until IX sessions disabled."
+ },
+ {
+  "incident": "Incidents/2021-11-05 TOC language converter",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "A parser change deployed with the train broke table-of-contents language conversion on Chinese Wikipedia; rollback then removed TOCs due to parser cache incompatibility."
+ },
+ {
+  "incident": "Incidents/2021-12-03 mx",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Kernel upgrade on mail server introduced conntrack bug dropping packets to Google, delaying outgoing wikimedia.org mail for about 24 hours."
+ },
+ {
+  "incident": "Incidents/2022-02-01 ulsfo network",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": "748098",
+  "detected_by": "automated alert",
+  "one_line": "A firewall configuration change pushed to ulsfo routers cut ulsfo's connectivity to other POPs and core sites for 3 minutes until rolled back."
+ },
+ {
+  "incident": "Incidents/2022-02-06 wdqs updater",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [
+   "service:rdf-streaming-updater"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Misbehaving k8s node kubernetes1014 cost the flink session cluster a pod, starving slots and stopping the eqiad WDQS streaming updater for 7 hours, throttling edits."
+ },
+ {
+  "incident": "Incidents/2022-02-22 vrts",
+  "how": "both readers agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Stuck generate_otrs_aliases timer on mx2001 failed to update VRTS aliases, causing intermittent 550 rejects for new dcw@wikimedia.org queue."
+ },
+ {
+  "incident": "Incidents/2022-02-22 wdqs updater codfw",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "service:swift"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Flink updater upgrade in codfw failed to restore savepoint due to poor swift client implementation, stalling WDQS updates and blocking bot edits via maxlag."
+ },
+ {
+  "incident": "Incidents/2022-03-01 ulsfo network",
+  "how": "both readers agree",
+  "trigger": "external dependency",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Multiple redundant network providers for a datacenter lost connectivity simultaneously; after 20 minutes clients were rerouted to other datacenters via DNS depool."
+ },
+ {
+  "incident": "Incidents/2022-03-04 esams availability banner sampling",
+  "how": "two adjudicators agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "A CentralNotice banner enabled for all users with 100% event sampling flooded Varnish with beacon traffic to eventgate, making wikis unreachable in Esams regions."
+ },
+ {
+  "incident": "Incidents/2022-03-06 wdqs-categories",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "WDQS Blazegraph in eqiad overloaded and blocked client traffic including Pybal, causing paging outage; resolved by clusterwide wdqs restarts."
+ },
+ {
+  "incident": "Incidents/2022-03-10 MediaWiki availability",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Incident possibly related to stopping MySQL with buffer pool dump between MariaDB 10.4 versions; report gives few details."
+ },
+ {
+  "incident": "Incidents/2022-03-27 api",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:changeprop",
+   "service:mobileapps"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "An itwiki template edit triggered mass transclusion updates; changeprop and mobileapps flooded the API cluster with reparse requests, exhausting PHP-FPM workers."
+ },
+ {
+  "incident": "Incidents/2022-03-27 wdqs outage",
+  "how": "both readers agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "WDQS codfw Blazegraph deadlocked while eqiad was depooled, causing outage until services were restarted."
+ },
+ {
+  "incident": "Incidents/2022-03-31 api errors",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": "773915",
+  "detected_by": "automated alert",
+  "one_line": "Train-deployed CentralAuth GlobalUsersPager change caused expensive queries on s7 replicas, tying up API PHP-FPM workers; slow queries killed, patches reverted."
+ },
+ {
+  "incident": "Incidents/2022-04-06 esams network",
+  "how": "both readers agree",
+  "trigger": "external dependency",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "An outage at the Amsterdam Internet Exchange (AMS-IX) platform caused connectivity issues affecting Wikimedia sites."
+ },
+ {
+  "incident": "Incidents/2022-04-26 cr2-eqord down",
+  "how": "two adjudicators agree",
+  "trigger": "external dependency",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "A Telia fiber cut followed by Telia maintenance took down all Eqord transports, making Eqord network equipment unreachable; no end-user impact."
+ },
+ {
+  "incident": "Incidents/2022-05-01 etcd",
+  "how": "both readers agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Expired etcd.eqiad TLS certificate on conf hosts' nginx broke conftool-data sync in eqiad; paged by etcd replication lag, fixed with new cergen certificate."
+ },
+ {
+  "incident": "Incidents/2022-05-02 deployment",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "An erroneous rm -rf deleted parts of /srv/deployment on deploy1002, halting deployments until restored from Bacula backup."
+ },
+ {
+  "incident": "Incidents/2022-05-05 Wikimedia full site outage",
+  "how": "two adjudicators agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": "785376",
+  "detected_by": "automated alert",
+  "one_line": "A GlobalBlocking schema change made MariaDB pick a slow plan for s7 globalblocks, stalling app servers until rolled back."
+ },
+ {
+  "incident": "Incidents/2022-05-09 confctl",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A confctl depool command with an invalid selector was applied to all hosts and depooled most codfw services, causing edge errors until repooled."
+ },
+ {
+  "incident": "Incidents/2022-05-09 exim-bdat-errors",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Exim rejected ~14,000 Gmail emails with 503 BDAT/CHUNKING errors for five days until users reported bounces; disabling chunking mitigated it."
+ },
+ {
+  "incident": "Incidents/2022-05-20 Database slow",
+  "how": "two adjudicators agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Slow database responses from a likely MariaDB 10.6 performance regression under load exhausted app server workers, causing brief uncached traffic latency/unavailability twice."
+ },
+ {
+  "incident": "Incidents/2022-05-21 varnish cache busting",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "A flood of API traffic from an AWS instance overloaded caching servers, making services behind the caching layer unreachable though still up."
+ },
+ {
+  "incident": "Incidents/2022-05-24 Failed Apache restart",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": "798615",
+  "detected_by": "human report",
+  "one_line": "Puppet change made Apache listen on 443 regardless of mod_ssl, causing apache2 failures across MediaWiki and other hosts until manually fixed."
+ },
+ {
+  "incident": "Incidents/2022-05-25 de.wikipedia.org",
+  "how": "two adjudicators agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Surge of POST requests to de.wikipedia.org root URLs overloaded s5 DB, saturating php-fpm workers and causing 503s and latency; self-resolved quickly."
+ },
+ {
+  "incident": "Incidents/2022-05-26 Database hardware failure",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Faulty memory caused db1128, m1 MariaDB primary, to reboot, making internal services like Bacula and Etherpad unavailable for ~12 minutes."
+ },
+ {
+  "incident": "Incidents/2022-05-31 Analytics Hadoop failure",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Full /srv on an-master1002 stopped standby NameNode fsimage saves, so JournalNode partitions filled and HDFS NameNodes crashed."
+ },
+ {
+  "incident": "Incidents/2022-06-01 Lost index in cloudelastic",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "A reimage operation caused the cloudelastic Elasticsearch cluster to lose a shard (red status). Search results stayed incomplete until a month-delayed restore was completed on 12 July."
+ },
+ {
+  "incident": "Incidents/2022-06-10 overload varnish haproxy",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Large volume of Varnish HTTP 429 rate-limit responses overloaded HAProxy, causing HTTP 503s and general service disruption."
+ },
+ {
+  "incident": "Incidents/2022-06-12 appserver latency",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Report contains only a status page link; no details about what happened, its cause, or how it was detected."
+ },
+ {
+  "incident": "Incidents/2022-06-16 MariaDB password leak",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Debug print statements on labtestwikitech leaked database credentials to web clients; password rotated after an engineer noticed, taking 60-90 minutes."
+ },
+ {
+  "incident": "Incidents/2022-06-21 asw-a2-codfw accidental power cycle",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Scheduled power maintenance on codfw rack A1 took down its network switch due to a loose second power cable; redundancy limited impact."
+ },
+ {
+  "incident": "Incidents/2022-06-30 asw-a4-codfw accidental power cycle",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "During power maintenance, a cable was bumped causing full power loss to the A4 codfw rack switch, dropping connectivity; minimal user impact."
+ },
+ {
+  "incident": "Incidents/2022-07-03 shellbox request spike",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:shellbox"
+  ],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "A surge of Parsoid Score (musical notation) requests from de.wikipedia overwhelmed Shellbox, causing slow requests and 503/504 errors; mitigated by adding k8s pods."
+ },
+ {
+  "incident": "Incidents/2022-07-11 FrontendUnavailable cache text",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "API request spike exhausted PHP workers and db1132 (MariaDB 10.6) connections, raising latency and errors; auto-recovered, root cause unclear."
+ },
+ {
+  "incident": "Incidents/2022-07-11 Shellbox and parsoid saturation",
+  "how": "two adjudicators agree",
+  "trigger": "latent bug",
+  "root_cause_components": [
+   "service:shellbox"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "VisualEditor Score preview debounce caused frequent Lilypond shellouts via Shellbox, overloading it and triggering ProbeDown pages; Parsoid and mobileapps also affected."
+ },
+ {
+  "incident": "Incidents/2022-07-12 codfw A5 powercycle",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "During PDU upgrade maintenance in codfw rack A5, CyrusOne flipped the wrong breaker, cutting both power feeds and taking all rack servers down."
+ },
+ {
+  "incident": "Incidents/2022-07-13 brief outbound bandwidth spike eqsin",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "A brief outbound bandwidth spike for upload in eqsin recovered by itself; details are restricted."
+ },
+ {
+  "incident": "Incidents/2022-07-20 network interruption",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Switch asw2-c-eqiad virtual chassis lost FPC5, taking rack C5 hosts down and causing network instability; some services needed manual recovery."
+ },
+ {
+  "incident": "Incidents/2022-08-10 cassandra disk space",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Planned Codfw power maintenance shut down Cassandra hosts; remaining hosts filled disks with hinted-handoff logs, resolved by restoring nodes early."
+ },
+ {
+  "incident": "Incidents/2022-08-10 confd all hosts",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": "817307",
+  "detected_by": "automated alert",
+  "one_line": "A Puppet change accidentally installed confd on many production hosts, causing widespread Puppet failures; installs were cleaned up via Cumin with no user impact."
+ },
+ {
+  "incident": "Incidents/2022-08-16 Beta Cluster 502",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Inadvertent restart of WMCS cloudvirts left all Beta Cluster sites returning 502 errors until trafficserver was restarted."
+ },
+ {
+  "incident": "Incidents/2022-08-16 x2 databases replication breakage",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Operators skipping statements to fix broken x2 replication broke local replicas; ChronologyProtector blocked MainStash writes, exposing a MediaWiki bug causing user-facing editing errors."
+ },
+ {
+  "incident": "Incidents/2022-08-24 swift",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Report is an unfilled template with no details about the incident, its cause, or how it was detected."
+ },
+ {
+  "incident": "Incidents/2022-08-26 Phabricator login issues",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "host:cp6016"
+  ],
+  "triggering_change": "826785",
+  "detected_by": "human report",
+  "one_line": "Testing an ATS cookie-handling puppet change on cp6016 stripped session cookies, breaking Phabricator logins until reverted; reported by users on IRC."
+ },
+ {
+  "incident": "Incidents/2022-09-08 codfw appservers degradation",
+  "how": "two adjudicators agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "host:conf1009",
+   "host:conf2005"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Nginx update on conf1009 restarted etcd tlsproxy, crashing etcdmirror on conf2005; deployment depooled appservers, and etcdmirror restart synced depools to 50% of codfw servers."
+ },
+ {
+  "incident": "Incidents/2022-09-09 Elastic Autocomplete Missing",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Elasticsearch 7 upgrade changes broke search autocomplete results after caches expired; editors reported it, mitigated by falling back to prefix search."
+ },
+ {
+  "incident": "Incidents/2022-09-15 sessionstore quorum issues",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:sessionstore"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "After reimaging a sessionstore Cassandra node, Kask (gocql bug) failed to recognise it, falsely losing quorum and disrupting wiki sessions and logins."
+ },
+ {
+  "incident": "Incidents/2022-10-04 jupyterhub-conda outage",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Report is an unfilled template with no incident details; cause, impact, and detection are unknown."
+ },
+ {
+  "incident": "Incidents/2022-10-06 eqiad row D networking",
+  "how": "two adjudicators agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "A configuration change pushed to cr1-eqiad during planned uplink work discarded row D traffic until an automatic two-minute rollback."
+ },
+ {
+  "incident": "Incidents/2022-10-15 s6 master failure",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "s6 master db1131 crashed from a failing DIMM, making s6 wikis read-only until power-cycled; later failed over to db1173."
+ },
+ {
+  "incident": "Incidents/2022-10-17 mx and vrts",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Spam wave to VRTS (otrs1001) spawned Perl processes exhausting RAM; OOM killed clamav, halting mail delivery and filling mx1001 queue."
+ },
+ {
+  "incident": "Incidents/2022-11-03 conf disk space",
+  "how": "two adjudicators agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A MediaWiki bug made dumps snapshot hosts hammer etcd on conf hosts, generating log spam that filled conf1008's disk; dumps paused and fix merged."
+ },
+ {
+  "incident": "Incidents/2022-11-04 Swift issues",
+  "how": "two adjudicators agree",
+  "trigger": "unknown",
+  "root_cause_components": [
+   "service:swift"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Swift media file backend returned errors for reads and uploads for 49 minutes; resolved by restarting swift-proxy on frontends and repooling hosts."
+ },
+ {
+  "incident": "Incidents/2022-11-15 asw1-eqsin",
+  "how": "two adjudicators agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Connecting a new server to eqsin top of rack switches triggered a Juniper bug causing a process crash and traffic interruption."
+ },
+ {
+  "incident": "Incidents/2022-11-17 Gerrit 3.5 upgrade",
+  "how": "two adjudicators agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Gerrit upgrade to 3.5.4 filled the root partition during reindexing, causing write failures until data was relocated to a dedicated partition."
+ },
+ {
+  "incident": "Incidents/2022-11-22 wdqs outage",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A single bad query likely overloaded Blazegraph-based WDQS in eqiad, causing 15+ minutes of failed or slow queries until hosts were restarted."
+ },
+ {
+  "incident": "Incidents/2022-12-02 wdqs outage",
+  "how": "inconclusive: no decision",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": ""
+ },
+ {
+  "incident": "Incidents/2022-12-09 MediaWiki REST API",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "MediaWiki 1.40.0-wmf.13 train change made REST API serve current revision for old revision requests, breaking visual diffs; fixed by rollback and backport."
+ },
+ {
+  "incident": "Incidents/2022-12-09 api appserver worker starvation",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Increased MediaWiki logging congested eventgate-analytics and starved api appservers of idle workers; no user impact."
+ },
+ {
+  "incident": "Incidents/2022-12-12 wdqs codfw brief outage",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Request influx exhausted codfw Blazegraph thread pools, triggering a known deadlock bug; most codfw WDQS requests failed until self-healing."
+ },
+ {
+  "incident": "Incidents/2022-12-13 sessionstore",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [
+   "service:sessionstore"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A wrong configuration change made sessionstore pods unschedulable in WikiKube, causing failed edits across all projects for 9 minutes."
+ },
+ {
+  "incident": "Incidents/2022-12-18 World Cup",
+  "how": "two adjudicators agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A 50% traffic increase during the World Cup combined with DiscussionTools API calls overloaded eqiad API servers, detected by automated monitoring alerts."
+ },
+ {
+  "incident": "Incidents/2022-12-21 shellbox-syntaxhighlight",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:shellbox-syntaxhighlight"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A sudden request spike, likely from jobrunners, overloaded shellbox-syntaxhighlight; it was mitigated by scaling it from 12 to 40 replicas."
+ },
+ {
+  "incident": "Incidents/2023-01-09 API errors - db1143",
+  "how": "two adjudicators agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Alertmanager SMS alerted SREs to an issue likely caused by unthrottled onLinksUpdateComplete checking commons file usage, resolved by DBA depooling a server."
+ },
+ {
+  "incident": "Incidents/2023-01-10 eqsin network outage",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Provider planned maintenance took down eqsin's second transport link while the first was cut, isolating eqsin; site depooled after ~11 minutes."
+ },
+ {
+  "incident": "Incidents/2023-01-14 asw-b2-codfw failure",
+  "how": "two adjudicators agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Switch asw-b2-codfw failed, taking all B2 rack hosts offline; swift and thanos frontends depooled, running with reduced redundancy until replacement."
+ },
+ {
+  "incident": "Incidents/2023-01-17 MediaWiki",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Backport deployment left extension.json applied before php-fpm restart picked up PHP code, crashing MediaWiki for all logged-in page views until reverted."
+ },
+ {
+  "incident": "Incidents/2023-01-17 asw-b2-codfw failure redux",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Prep work for replacing codfw row B switch triggered Junos bugs, destabilizing row B and breaking IPv6 connectivity, requiring service depools and onsite work."
+ },
+ {
+  "incident": "Incidents/2023-01-24 sessionstore quorum issues",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:sessionstore"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Routine reboot of Cassandra host sessionstore1001 caused LOCAL_QUORUM errors after rejoining, causing session loss and failed edits until Kask was restarted."
+ },
+ {
+  "incident": "Incidents/2023-01-30 kartotherian",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "service:kartotherian"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Kartotherian upgrade triggered spurious Icinga alerts; rollback without --env flag broke fragile config templates, causing a maps outage until redeployed correctly."
+ },
+ {
+  "incident": "Incidents/2023-02-11 logstash latency",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A flood of Parsoid PHP notice exceptions caused Kafka consumer lag in eqiad Logstash, unnoticed on a Saturday, consuming 160% of quarterly latency SLO budget."
+ },
+ {
+  "incident": "Incidents/2023-02-22 read only",
+  "how": "two adjudicators agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "A logical bug in a switchover test script accidentally set the secondary datacenter to read-only mode, disabling mobile editing until reported by users."
+ },
+ {
+  "incident": "Incidents/2023-02-22 wiki outage",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "During HAProxy upgrade maintenance, all ATS backends in esams and eqiad text cache were accidentally depooled, causing ~17M errored requests."
+ },
+ {
+  "incident": "Incidents/2023-02-23 PHP worker threads exhaustion",
+  "how": "both readers agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "MariaDB 10.6.10 query killer bug left db1127 overloaded, saturating api_appserver PHP-FPM workers; host was depooled to recover."
+ },
+ {
+  "incident": "Incidents/2023-02-28 GitLab data loss",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "During planned GitLab datacenter switchover, the daily restore job stayed enabled on the new codfw production host, restoring a backup and losing ~2 hours of data."
+ },
+ {
+  "incident": "Incidents/2023-03-09 mailman",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "During eqiad row A switch maintenance, Mailman's out runner crashed on DB connection loss; outgoing mail queued for ~2 days despite unnoticed Icinga alert."
+ },
+ {
+  "incident": "Incidents/2023-05-02 Phabricator outage during GitLab maintenance",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Planned GitLab datacenter switch maintenance made Phabricator tasks fail to load due to a GitLab patches widget not handling GitLab unavailability."
+ },
+ {
+  "incident": "Incidents/2023-05-05 prometheus down in ulsfo and eqsin",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:prometheus"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Prometheus Buster-to-Bullseye migration copied corrupted WAL/chunks_head files, leaving Prometheus down for 8 hours in two data centers, losing observability."
+ },
+ {
+  "incident": "Incidents/2023-05-05 wdqs not updating in codfw",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [
+   "service:rdf-streaming-updater"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "rdf-streaming-updater in CODFW became unstable and stopped sending updates, causing stale WDQS/WCQS data; alerts fired but weren't treated urgently."
+ },
+ {
+  "incident": "Incidents/2023-05-23 wdqs CODFW 5xx errors",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "An external user repeatedly sending an expensive query caused WDQS errors and timeouts in CODFW; mitigated with a requestctl rule."
+ },
+ {
+  "incident": "Incidents/2023-05-28 wikireplicas lag",
+  "how": "both readers agree",
+  "trigger": "latent bug",
+  "root_cause_components": [
+   "host:db1154",
+   "host:db1155"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Replication broke on sanitarium hosts db1154/db1155 (likely MariaDB bug), stalling wikireplicas for days; sections were downgraded and recloned to recover."
+ },
+ {
+  "incident": "Incidents/2023-06-18 search broken on wikidata and commons",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Routine Elasticsearch reindex de-duplicated analyzers; token_count_router still referenced removed text_search analyzer, breaking fulltext search on Wikidata and Commons until one-line fixes deployed."
+ },
+ {
+  "incident": "Incidents/2023-07-19 enrich job outage",
+  "how": "two adjudicators agree",
+  "trigger": "latent bug",
+  "root_cause_components": [
+   "service:mw-page-content-change-enrich"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "mw-page-content-change-enrich stalled when messages exceeded Kafka's maximum message size, degrading SLIs; the application was manually restarted and caught up on consumer lag."
+ },
+ {
+  "incident": "Incidents/2023-08-09 mw-on-k8s outage due to wrong tls cert",
+  "how": "two adjudicators agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "A global k8s defaults change switched to cert-manager certificates, so the next MediaWiki-on-k8s deployment used wrong TLS certs, failing mw-api probes."
+ },
+ {
+  "incident": "Incidents/2023-08-30 hadoop-yarn",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Wrong YARN log aggregation compression value ('gzip' instead of 'gz') on re-imaged Hadoop workers broke log retrieval, failing Airflow tasks."
+ },
+ {
+  "incident": "Incidents/2023-09-20 Elasticsearch unavailable",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:restbase"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "After DC switchover, RESTBase more_like search queries sent as POST routed to codfw, overloading an Elasticsearch node and delaying on-wiki search."
+ },
+ {
+  "incident": "Incidents/2023-09-20 mw-page-content-change-enrich",
+  "how": "two adjudicators agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:mw-page-content-change-enrich"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "After DC switchover depooled thanos-swift from eqiad, misconfigured egress rules made mw-page-content-change-enrich flink app fail to start in passive eqiad."
+ },
+ {
+  "incident": "Incidents/2023-09-27 Kafka-jumbo mirror-makers",
+  "how": "inconclusive: no decision",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": ""
+ },
+ {
+  "incident": "Incidents/2023-09-28 mw-page-content-change-enrich",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:mw-page-content-change-enrich"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Kafka partition reassignment to new brokers caused the mw-page-content-change-enrich Flink job to fail producing to Kafka; backlog cleared after increasing parallelism."
+ },
+ {
+  "incident": "Incidents/2023-09-29 CloudVPS vms losing network connectivity",
+  "how": "two adjudicators agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": "961005",
+  "detected_by": "human report",
+  "one_line": "A puppet package-cleanup patch removed isc-dhcp-client from bullseye Cloud VPS VMs; expiring DHCP leases cut network connectivity, taking down proxies, metricsinfra and NFS."
+ },
+ {
+  "incident": "Incidents/2023-11-15 esams unreachable",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "An engineer accidentally rebooted a linecard on cr1-esams (wrong router), making the ESAMS datacenter unreachable for about 10 minutes and dropping global requests."
+ },
+ {
+  "incident": "Incidents/2024-02-28 etcd-mirror",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Over 1,000 consecutive non-conftool etcd events from Spicerack cookbook locks exceeded etcd v2 event retention, breaking etcd-mirror replication eqiadâ†’codfw; fixed by manually advancing index."
+ },
+ {
+  "incident": "Incidents/2024-03-27 Elasticsearch Omega Cluster Failure",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Decommissioning too many Elasticsearch hosts at once, including omega masters, broke a small cluster in the inactive datacenter; aborted cookbook still wiped a master."
+ },
+ {
+  "incident": "Incidents/2024-04-17 mw-on-k8s eqiad outage",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "service:mw-mcrouter"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Deploying mw-mcrouter daemonset in eqiad used a non-dot-terminated FQDN, tripling DNS queries and OOM-killing CoreDNS, breaking MediaWiki pods until depool and revert."
+ },
+ {
+  "incident": "Incidents/2024-04-26 Search unavailable for some eqiad users",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "New elastic hosts in racks E5/F5 were unreachable from LVS because new rack vlans were never configured on load-balancers, causing search errors."
+ },
+ {
+  "incident": "Incidents/2024-04-28 WMCS Toolforge Redis refusing connections",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Toolforge Redis intermittently refused connections for an hour due to max clients reached; resolved by failover and manual restart."
+ },
+ {
+  "incident": "Incidents/2024-05-28 wikikube-api",
+  "how": "two adjudicators agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "service:kubemaster"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Failed MediaWiki deployment caused by CPU and network saturation on Kubernetes API servers exacerbated by OpenTelemetry collector traffic."
+ },
+ {
+  "incident": "Incidents/2024-05-31 Image hotlinking",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Hotlinking of a Commons image caused outbound link saturation in eqsin; mitigated by a varnish frontend rule returning HTTP 429."
+ },
+ {
+  "incident": "Incidents/2024-06-10 puppet volatile data broken sync",
+  "how": "two adjudicators agree",
+  "trigger": "latent bug",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Rsync clients syncing puppet volatile data from puppetmaster1001 hung indefinitely for six weeks due to no timeouts, leaving GeoIP data stale, especially in codfw."
+ },
+ {
+  "incident": "Incidents/2024-06-11 WMCS Ceph",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Faulty optic on WMCS inter-rack fiber link caused packet loss in Ceph cluster, stalling storage writes and making Cloud VPS services inaccessible."
+ },
+ {
+  "incident": "Incidents/2024-06-12 WMCS toolforge k8s control plane",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "System-wide renaming of Kyverno policies overloaded Toolforge Kubernetes control nodes, making the API unresponsive and preventing rollback."
+ },
+ {
+  "incident": "Incidents/2024-06-21 - 2024-06-24 Outage Incidents - Dumps Generation Issues",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Full dumps pressured databases, causing MediaWiki DB errors whose UDP log flood overwhelmed the network and took the wikis down."
+ },
+ {
+  "incident": "Incidents/2024-07-21 s4 and x1 write overload",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "s4 database section overload cascaded to x1, triggering circuit breaking and 5XX errors on MediaWiki API until write load was reduced."
+ },
+ {
+  "incident": "Incidents/2024-09-16 logstash unavailability",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Scap deploy of phatality plugin failed to remove old version due to sudo check failure, causing duplicate plugin fatal error on all logstash dashboards."
+ },
+ {
+  "incident": "Incidents/2024-09-18 replication",
+  "how": "two adjudicators agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": "693162",
+  "detected_by": "human report",
+  "one_line": "Setting up circular replication before the datacenter switchover broke ROW-based x1 and es replication over missing heartbeat rows."
+ },
+ {
+  "incident": "Incidents/2024-09-23 pc1013 hardware issue",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "DIMM error on parser cache host pc1013 crashed MariaDB repeatedly; failed over to spare pc1015, causing degraded performance from cold cache."
+ },
+ {
+  "incident": "Incidents/2024-09-28 cr2-eqsin down",
+  "how": "both readers agree",
+  "trigger": "hardware failure",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Core router cr2-eqsin failed due to hardware (disk) failure; recovery slowed when it loaded an outdated rescue config; eqsin depooled to restore access."
+ },
+ {
+  "incident": "Incidents/2024-10-09 calico-codfw",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [
+   "service:mw-script"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Batch transcode requeue via mwscript-k8s created ~1.8k jobs and Calico network policies, overloading Calico in codfw WikiKube and causing cascading node failures."
+ },
+ {
+  "incident": "Incidents/2024-10-24 codfw pc and kafka mirrormaker issues",
+  "how": "two adjudicators agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Parser cache p2 in codfw saturated with connections from a template-driven reparse surge and a scraper, on hosts lacking the query killer."
+ },
+ {
+  "incident": "Incidents/2024-11-25 WMCS proxy nginx failure",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Known Puppet bug removed nameserver from resolv.conf and nginx configs on proxy-04, causing nginx to fail; paged, fixed by restoring resolv.conf."
+ },
+ {
+  "incident": "Incidents/2024-11-26 WMCS network problems",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": "1092425",
+  "detected_by": "human report",
+  "one_line": "Puppet change to OpenStack OVS config restarted neutron agents, interrupting VM networking and breaking Toolforge NFS and Kubernetes DNS resolution."
+ },
+ {
+  "incident": "Incidents/2024-12-03 Port saturation from cached Varnish HEAD-GET upgrades",
+  "how": "two adjudicators agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "WME HEAD requests converted to cached GETs by ATS saturated eqiad switch links; changing ATS caching for WME IPs reduced traffic."
+ },
+ {
+  "incident": "Incidents/2025-01-21 Gerrit unavailable",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Incoming traffic overwhelmed Gerrit, making it inaccessible to all users; ProbeDown alert fired and an engineer manually paged SRE."
+ },
+ {
+  "incident": "Incidents/2025-02-17 maps",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Shifting Kartotherian traffic to Kubernetes, which lacked the LVS loopback address, overloaded the remaining bare-metal capacity."
+ },
+ {
+  "incident": "Incidents/2025-02-19 maps",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Pooling Kubernetes workers back into Kartotherian, whose TLS certificate lacked the maps.wikimedia.org name, sent about 31,000 requests to 50x errors."
+ },
+ {
+  "incident": "Incidents/2025-02-27 wdqs 500 errors",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": "1123238",
+  "detected_by": "automated alert",
+  "one_line": "A WikimediaCampaignEvents extension change deployed to production raised WDQS query failures for about 40 minutes; reverting it restored normal levels."
+ },
+ {
+  "incident": "Incidents/2025-02-28 www.wikipedia.org redirect",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": "1080357",
+  "detected_by": "human report",
+  "one_line": "Incorrect Apache config deploy caused infinite redirect on www.wikipedia.org; impact grew gradually as CDN caches expired, reported by users on social media."
+ },
+ {
+  "incident": "Incidents/2025-03-01 mw-content-history-reconcile-enrich",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Monthly reconcile DAG produced 6.3M extra events, causing Flink taskmanager OOMs and pipeline failure; fixed by adding replicas and doubling memory."
+ },
+ {
+  "incident": "Incidents/2025-03-12 ExternalStorage Database Cluster Overload",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "service:mw-api-int",
+   "service:mw-parsoid",
+   "service:mw-jobrunner"
+  ],
+  "triggering_change": "1126607",
+  "detected_by": "automated alert",
+  "one_line": "PHP 8.1 scap rollout left mw-api-int, parsoid, jobrunner without Memcached access, overloading External Storage databases and causing high latency and errors."
+ },
+ {
+  "incident": "Incidents/2025-03-29 Upload cache unavailability",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:swift"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Excessive downloads of .tiff files overloaded Swift in eqiad, causing latency and errors on upload.wikimedia.org until traffic was throttled."
+ },
+ {
+  "incident": "Incidents/2025-03-31 sessionstore unavailability",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [
+   "service:sessionstore"
+  ],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Aberrant high-rate session overwrites filled sessionstore Cassandra disks, crashing nodes and losing quorum; edits failed until storage was wiped."
+ },
+ {
+  "incident": "Incidents/2025-04-30 Gerrit data corruption",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "During Gerrit switchover from gerrit2002 to gerrit1003, both hosts acted as primary, replicating stale state and corrupting two repositories, causing five hours of downtime."
+ },
+ {
+  "incident": "Incidents/2025-05-07 Mobileapps + Cite",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [
+   "service:mobileapps"
+  ],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Train wmf.27 removed transitional Cite CSS rule; stale footnote styles copied into mobileapps conflicted with new localized HTML markers, breaking footnotes for users."
+ },
+ {
+  "incident": "Incidents/2025-05-07 cloud-vps security groups deleted",
+  "how": "two adjudicators agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "A buggy automated script expanding security group rules for IPv6 deleted existing rules instead of updating them, causing outages across cloud-vps services including Toolforge, Quarry, and Prometheus/Grafana."
+ },
+ {
+  "incident": "Incidents/2025-05-08 Papal announcement traffic surge",
+  "how": "both readers agree",
+  "trigger": "traffic surge",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "Papal election announcement drove record 800k req/s traffic; esams IPVS load balancers overloaded, causing ~10 minutes of errors for some European users."
+ },
+ {
+  "incident": "Incidents/2025-05-09 Missing autocomplete indices",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Wikipedia search bar autocomplete returned unexpected results; community reported it, alerts did not fire, and traffic was routed away from EQIAD."
+ },
+ {
+  "incident": "Incidents/2025-05-29 OpenSearch clusters unavailable",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "During bulk decommissioning of CirrusSearch/OpenSearch nodes, node banning failed, destabilizing the cluster and streaming updater; datacenter was depooled so no user impact."
+ },
+ {
+  "incident": "Incidents/2025-06-30 eventgate-analytics has stopped producing events",
+  "how": "inconclusive: no decision",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": ""
+ },
+ {
+  "incident": "Incidents/2025-07-07 Cirrussearch outage",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "OpenSearch cluster lost quorum (no cluster leader, 503s) after master-eligible replacement procedure wasn't followed during migration; traffic failed over quickly."
+ },
+ {
+  "incident": "Incidents/2025-07-11 WMCS Ceph issues causing Toolforge and Cloud VPS failures",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "Ceph hosts upgraded to Debian Bookworm misbehaved intermittently, taking down Toolforge tools and Cloud VPS VMs until downgraded back to Bullseye."
+ },
+ {
+  "incident": "Incidents/2025-07-17 Cite + VisualEditor list-defined reference disappearances",
+  "how": "both readers agree",
+  "trigger": "deploy",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "A Cite extension change omitted a list item ID in VisualEditor serialization, causing Parsoid to drop list-defined references on save; reverted and backported."
+ },
+ {
+  "incident": "Incidents/2025-07-21 Cirrussearch outage",
+  "how": "both readers agree",
+  "trigger": "maintenance",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "OpenSearch cluster lost quorum (no cluster leader, 503s) after master-eligible replacement procedure wasn't followed during migration; traffic failed over quickly."
+ },
+ {
+  "incident": "Incidents/2025-09-25 wdqs",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "automated alert",
+  "one_line": "All WDQS codfw Blazegraph servers deadlocked simultaneously, leaving no healthy LVS pool hosts and causing 500 errors on query.wikidata.org; root cause unknown."
+ },
+ {
+  "incident": "Incidents/2025-11-04 wdqs codfw overload",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "From 22:45 UTC on 4 Nov 2025, Wikidata Query Service on CODFW was slow, erroring, or timing out; bots editing Wikidata were throttled."
+ },
+ {
+  "incident": "Incidents/2025-11-05 WMCS toolsdb primary out of space",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "ToolsDB ran out of disk space as ibdata1 grew uncontrollably on tools-db-4, breaking tool connections; users reported it as no write-check alert existed."
+ },
+ {
+  "incident": "Incidents/2025-11-06 WAF",
+  "how": "both readers agree",
+  "trigger": "config change",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "A WAF rate-limit rule was mistakenly set to global throttling instead of per-IP, rate-limiting users until an engineer noticed a 429 and reverted it."
+ },
+ {
+  "incident": "Incidents/2025-11-11 WMCS toolsdb primary down",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "ToolsDB primary crashed (cause unclear, possibly load from undo logs after prior crash); engineer logged in noticed and failed over to replica in ~10 minutes."
+ },
+ {
+  "incident": "Incidents/2026-02-23 ml-serve",
+  "how": "inconclusive: the adjudicators disagree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "human report",
+  "one_line": "K8s 1.31 upgrade of ML clusters brought Istio 1.24, whose stricter VirtualService host validation broke transparent-proxy model servers, causing 5XX errors."
+ },
+ {
+  "incident": "Incidents/2026-05-13 wdqs",
+  "how": "inconclusive: no decision",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": ""
+ },
+ {
+  "incident": "Incidents/2026-10-21 PHP security update",
+  "how": "both readers agree",
+  "trigger": "unknown",
+  "root_cause_components": [],
+  "triggering_change": null,
+  "detected_by": "unknown",
+  "one_line": "Report is an unfilled template with no incident details; cause, detection, and impact are not described."
+ }
+]

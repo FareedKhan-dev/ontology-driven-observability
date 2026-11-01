@@ -1,0 +1,34 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> . @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ops: <https://kg.example.org/ops#> . @prefix corr: <https://kg.example.org/correlation#> . @prefix slack: <https://kg.example.org/slack#> . @prefix tl: <https://kg.example.org/timeline#> .
+@prefix alert: <https://kg.example.org/alert#> . @prefix harvest: <https://kg.example.org/harvest#> . @prefix incident: <https://kg.example.org/incident#> .
+@prefix : <https://kg.example.org/shapes#> .
+
+:CatalogueGate a sh:NodeShape ; sh:targetClass ops:Application ;
+    sh:property [ sh:path ops:catalogId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+                  sh:message "an application must come from the catalogue" ] .
+:HostShape a sh:NodeShape ; sh:targetClass ops:Host ;
+    sh:property [ sh:path ops:name ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+    sh:property [ sh:path ops:memberOf ; sh:maxCount 1 ; sh:class ops:Cluster ] .
+:SignalShape a sh:NodeShape ; sh:targetClass corr:Signal ;
+    sh:property [ sh:path corr:at ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ;
+                  sh:message "every signal needs exactly one time" ] ;
+    sh:property [ sh:path corr:on ; sh:class ops:Component ; sh:message "a signal sits on a known component" ] ;
+    sh:property [ sh:path corr:severity ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ;
+                  sh:message "severity is a number between 0 and 1" ] .
+:IncidentShape a sh:NodeShape ; sh:targetClass ops:Incident ;
+    sh:property [ sh:path ops:affects ; sh:class ops:Component ] .
+:ChainShape a sh:NodeShape ; sh:targetClass corr:Chain ;
+    sh:property [ sh:path corr:confidence ; sh:minCount 1 ; sh:datatype xsd:decimal ; sh:minInclusive 0 ;
+                  sh:maxInclusive 1 ; sh:message "a confidence is a number between 0 and 1, never text" ] ;
+    sh:property [ sh:path corr:rootCause ; sh:minCount 1 ; sh:class corr:Signal ] ;
+    sh:property [ sh:path corr:leadsTo ; sh:minCount 1 ; sh:class corr:Signal ] .
+:MessageShape a sh:NodeShape ; sh:targetClass slack:Message ;
+    sh:property [ sh:path slack:postedAt ; sh:minCount 1 ; sh:datatype xsd:dateTime ] ;
+    sh:property [ sh:path slack:category ; sh:maxCount 1 ; sh:in ( "incident" "question" "discussion" "decision" ) ;
+                  sh:message "a category is one of the four the ladder knows" ] ;
+    sh:property [ sh:path slack:sentiment ; sh:maxCount 1 ; sh:in ( "positive" "neutral" "negative" "urgent" ) ] ;
+    sh:property [ sh:path slack:mentions ; sh:class ops:Component ] .
+:CoverageShape a sh:NodeShape ; sh:targetClass harvest:Coverage ;
+    sh:property [ sh:path harvest:status ; sh:minCount 1 ; sh:in ( "ok" "partial" "missing" ) ;
+                  sh:message "a harvest is ok, partial or missing, nothing else" ] ;
+    sh:property [ sh:path harvest:windowStart ; sh:minCount 1 ; sh:datatype xsd:dateTime ] .

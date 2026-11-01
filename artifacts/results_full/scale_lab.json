@@ -1,0 +1,92 @@
+{
+ "measured_at": "2026-10-31 19:46 UTC",
+ "machine": {
+  "cpu": "Intel(R) Core(TM) Ultra 7 255H",
+  "cores": 16,
+  "ram_gib": 31.4,
+  "code_drive_free_gib": 66.3,
+  "data_drive_free_gib": 162.1
+ },
+ "power": "mains",
+ "runs": [
+  {
+   "name": "one entity, one hour (pushdown)",
+   "rows": 396556997,
+   "seconds": 0.213,
+   "extra_gib": 0.13,
+   "out_rows": 1
+  },
+  {
+   "name": "spans per entity-minute: count, mean, max",
+   "rows": 396556997,
+   "seconds": 5.876,
+   "extra_gib": 0.81,
+   "out_rows": 380091
+  },
+  {
+   "name": "spans per entity-minute: exact p99",
+   "rows": 396556997,
+   "seconds": 7.765,
+   "extra_gib": 4.8,
+   "out_rows": 380091
+  },
+  {
+   "name": "spans per entity-minute: approximate p99",
+   "rows": 396556997,
+   "seconds": 13.748,
+   "extra_gib": 3.9,
+   "out_rows": 380091
+  },
+  {
+   "name": "error-looking log lines per entity-minute",
+   "rows": 76707680,
+   "seconds": 3.843,
+   "extra_gib": 3.98,
+   "out_rows": 32989
+  },
+  {
+   "name": "pageviews: views per wiki per hour",
+   "rows": 1142762478,
+   "seconds": 2.216,
+   "extra_gib": 0.28,
+   "out_rows": 299561
+  },
+  {
+   "name": "pageviews: the day's 20 most-read pages",
+   "rows": 160659081,
+   "seconds": 20.945,
+   "extra_gib": 5.74,
+   "out_rows": 20
+  },
+  {
+   "name": "metric series: mean, spread, worst z-score",
+   "rows": 51283042,
+   "seconds": 0.358,
+   "extra_gib": 0.14,
+   "out_rows": 14756
+  }
+ ],
+ "p99_error": {
+  "median": 0.048926940925439075,
+  "p95": 0.9035777683034169,
+  "pairs": 380091
+ },
+ "funnel": {
+  "spans": {
+   "raw rows": 396556997,
+   "entity-minutes": 380091,
+   "slow minutes": 23422,
+   "slow episodes": 5617
+  },
+  "logs": {
+   "raw rows": 76707680,
+   "entity-minutes": 32989,
+   "slow minutes": 10131,
+   "slow episodes": 107
+  }
+ },
+ "disk_read": {
+  "gb": 11.75,
+  "seconds": 6.18
+ }
+}
